@@ -1,0 +1,21 @@
+Total bytes used: 37748768 (36.00MiB)
+
+Allocations sorted by size:
+
+cumulative_size; total_size - cumulative_size; allocation
+------------------------------------------------------------------------------
+  18.00MiB( 50%);   18.00MiB; allocation 0: size 18.00MiB, parameter 0, shape |bf16[2048,4608]| at ShapeIndex {}:
+  22.50MiB( 62%);   13.50MiB; allocation 1: size 4.50MiB, maybe-live-out:
+  27.00MiB( 75%);    9.00MiB; allocation 2: size 4.50MiB, maybe-live-out:
+  31.50MiB( 87%);    4.50MiB; allocation 3: size 4.50MiB, maybe-live-out:
+  36.00MiB(100%);        32B; allocation 4: size 4.50MiB, maybe-live-out:
+  36.00MiB(100%);         0B; allocation 5: size 32B, output shape is |(bf16[2048,1152], bf16[2048,1152], bf16[2048,1152], bf16[2048,1152])|, maybe-live-out:
+
+
+Allocations sorted by size with their values:
+allocation 0: size 18.00MiB, parameter 0, shape |bf16[2048,4608]| at ShapeIndex {}:
+allocation 1: size 4.50MiB, maybe-live-out:
+allocation 2: size 4.50MiB, maybe-live-out:
+allocation 3: size 4.50MiB, maybe-live-out:
+allocation 4: size 4.50MiB, maybe-live-out:
+allocation 5: size 32B, output shape is |(bf16[2048,1152], bf16[2048,1152], bf16[2048,1152], bf16[2048,1152])|, maybe-live-out:

@@ -1,0 +1,11 @@
+HloModule jit__multi_slice, entry_computation_layout={(bf16[152064,2048]{1,0})->(bf16[38016,2048]{1,0}, bf16[38016,2048]{1,0}, bf16[38016,2048]{1,0}, bf16[38016,2048]{1,0})}, allow_spmd_sharding_propagation_to_output={true,true,true,true}, frontend_attributes={xla.sdy.meshes={empty_mesh = #sdy.mesh<[]>}}
+
+ENTRY %main.1 (self.1: bf16[152064,2048]) -> (bf16[38016,2048], bf16[38016,2048], bf16[38016,2048], bf16[38016,2048]) {
+  %self.1 = bf16[152064,2048]{1,0} parameter(0), sharding={replicated}, frontend_attributes={xla.sdy.sharding="#sdy.sharding<@empty_mesh, [{}, {}]>"}, metadata={op_name="self"}
+  %slice.4 = bf16[38016,2048]{1,0} slice(%self.1), slice={[0:38016], [0:2048]}, metadata={op_name="jit(_multi_slice)/slice" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/layers/vllm/sharding.py" source_line=72 source_end_line=72 source_column=22 source_end_column=54}
+  %slice.5 = bf16[38016,2048]{1,0} slice(%self.1), slice={[38016:76032], [0:2048]}, metadata={op_name="jit(_multi_slice)/slice" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/layers/vllm/sharding.py" source_line=72 source_end_line=72 source_column=22 source_end_column=54}
+  %slice.6 = bf16[38016,2048]{1,0} slice(%self.1), slice={[76032:114048], [0:2048]}, metadata={op_name="jit(_multi_slice)/slice" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/layers/vllm/sharding.py" source_line=72 source_end_line=72 source_column=22 source_end_column=54}
+  %slice.7 = bf16[38016,2048]{1,0} slice(%self.1), slice={[114048:152064], [0:2048]}, metadata={op_name="jit(_multi_slice)/slice" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/layers/vllm/sharding.py" source_line=72 source_end_line=72 source_column=22 source_end_column=54}
+  ROOT %tuple.1 = (bf16[38016,2048]{1,0}, bf16[38016,2048]{1,0}, bf16[38016,2048]{1,0}, bf16[38016,2048]{1,0}) tuple(%slice.4, %slice.5, %slice.6, %slice.7)
+}
+

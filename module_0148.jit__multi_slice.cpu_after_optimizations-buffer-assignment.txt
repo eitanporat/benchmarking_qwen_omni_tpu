@@ -1,0 +1,91 @@
+BufferAssignment:
+allocation 0: size 20971520, parameter 0, shape |bf16[5120,2048]| at ShapeIndex {}:
+ value: <16 self.1 @0> (size=20971520,offset=0): bf16[5120,2048]{1,0}
+allocation 1: size 5242880, maybe-live-out:
+ value: <17 slice_convert_fusion.3 @0> (size=5242880,offset=0): bf16[1280,2048]{1,0}
+allocation 2: size 5242880, maybe-live-out:
+ value: <18 slice_convert_fusion.2 @0> (size=5242880,offset=0): bf16[1280,2048]{1,0}
+allocation 3: size 5242880, maybe-live-out:
+ value: <19 slice_convert_fusion.1 @0> (size=5242880,offset=0): bf16[1280,2048]{1,0}
+allocation 4: size 5242880, maybe-live-out:
+ value: <20 slice_convert_fusion @0> (size=5242880,offset=0): bf16[1280,2048]{1,0}
+allocation 5: size 32, output shape is |(bf16[1280,2048], bf16[1280,2048], bf16[1280,2048], bf16[1280,2048])|, maybe-live-out:
+ value: <21 tuple.1{} @0> (size=32,offset=0): (bf16[1280,2048]{1,0}, bf16[1280,2048]{1,0}, bf16[1280,2048]{1,0}, bf16[1280,2048]{1,0})
+
+Total bytes used: 41943072 (40.00MiB)
+
+Used values:
+<16 self.1 @0>
+ positions:
+  self.1
+ uses:
+  slice_convert_fusion.3, operand 0
+  slice_convert_fusion, operand 0
+  slice_convert_fusion.1, operand 0
+  slice_convert_fusion.2, operand 0
+ from instruction: %self.1 = bf16[5120,2048]{1,0} parameter(0), metadata={op_name="self"}
+<17 slice_convert_fusion.3 @0>
+ positions:
+  slice_convert_fusion.3
+  tuple.1 {0}
+ uses:
+  tuple.1, operand 0
+ from instruction: %slice_convert_fusion.3 = bf16[1280,2048]{1,0} fusion(%self.1), kind=kLoop, calls=%fused_computation.3, backend_config={"outer_dimension_partitions":["14"]}
+<18 slice_convert_fusion.2 @0>
+ positions:
+  slice_convert_fusion.2
+  tuple.1 {1}
+ uses:
+  tuple.1, operand 1
+ from instruction: %slice_convert_fusion.2 = bf16[1280,2048]{1,0} fusion(%self.1), kind=kLoop, calls=%fused_computation.2, backend_config={"outer_dimension_partitions":["14"]}
+<19 slice_convert_fusion.1 @0>
+ positions:
+  slice_convert_fusion.1
+  tuple.1 {2}
+ uses:
+  tuple.1, operand 2
+ from instruction: %slice_convert_fusion.1 = bf16[1280,2048]{1,0} fusion(%self.1), kind=kLoop, calls=%fused_computation.1, backend_config={"outer_dimension_partitions":["14"]}
+<20 slice_convert_fusion @0>
+ positions:
+  slice_convert_fusion
+  tuple.1 {3}
+ uses:
+  tuple.1, operand 3
+ from instruction: %slice_convert_fusion = bf16[1280,2048]{1,0} fusion(%self.1), kind=kLoop, calls=%fused_computation, backend_config={"outer_dimension_partitions":["14"]}
+<21 tuple.1{} @0>
+ positions:
+  tuple.1 {}
+ uses:
+ from instruction: %tuple.1 = (bf16[1280,2048]{1,0}, bf16[1280,2048]{1,0}, bf16[1280,2048]{1,0}, bf16[1280,2048]{1,0}) tuple(%slice_convert_fusion.3, %slice_convert_fusion.2, %slice_convert_fusion.1, %slice_convert_fusion)
+
+
+HloLiveRange (max 6):
+  InstructionSequence:
+    0:self.1
+    1:slice_convert_fusion.3
+    2:slice_convert_fusion
+    3:slice_convert_fusion.1
+    4:slice_convert_fusion.2
+    5:tuple.1
+  BufferLiveRange:
+    self.1{}:0-6
+    slice_convert_fusion.3{}:1-6
+    slice_convert_fusion.2{}:4-6
+    slice_convert_fusion.1{}:3-6
+    slice_convert_fusion{}:2-6
+    tuple.1{}:5-6
+  Live ranges at 5 (peak):
+    self.1{}: 20971520 bytes (cumulative: 20971520 bytes)
+    slice_convert_fusion{}: 5242880 bytes (cumulative: 26214400 bytes)
+    slice_convert_fusion.1{}: 5242880 bytes (cumulative: 31457280 bytes)
+    slice_convert_fusion.2{}: 5242880 bytes (cumulative: 36700160 bytes)
+    slice_convert_fusion.3{}: 5242880 bytes (cumulative: 41943040 bytes)
+    tuple.1{}: 32 bytes (cumulative: 41943072 bytes)
+  Stack trace breakdown for peak usage: 41 943 072 bytes
+    main.1 (100.0%, total: 41 943 072 bytes, current: 0 bytes, remaining: 41 943 072 bytes)
+      ├── self (50.0%, total: 20 971 520 bytes, current: 20 971 520 bytes, remaining: 20 971 552 bytes)
+      ├── slice_convert_fusion (12.5%, total: 5 242 880 bytes, current: 5 242 880 bytes, remaining: 15 728 672 bytes)
+      ├── slice_convert_fusion.1 (12.5%, total: 5 242 880 bytes, current: 5 242 880 bytes, remaining: 10 485 792 bytes)
+      ├── slice_convert_fusion.2 (12.5%, total: 5 242 880 bytes, current: 5 242 880 bytes, remaining: 5 242 912 bytes)
+      ├── slice_convert_fusion.3 (12.5%, total: 5 242 880 bytes, current: 5 242 880 bytes, remaining: 32 bytes)
+      └── tuple.1 (0.0%, total: 32 bytes, current: 32 bytes, remaining: 0 bytes)

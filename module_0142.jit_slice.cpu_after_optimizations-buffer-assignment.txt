@@ -1,0 +1,36 @@
+BufferAssignment:
+allocation 0: size 20971520, parameter 0, shape |bf16[5120,2048]| at ShapeIndex {}:
+ value: <4 args_0_.1 @0> (size=20971520,offset=0): bf16[5120,2048]{1,0}
+allocation 1: size 2097152, output shape is |bf16[512,2048]|, maybe-live-out:
+ value: <5 slice_convert_fusion @0> (size=2097152,offset=0): bf16[512,2048]{1,0}
+
+Total bytes used: 23068672 (22.00MiB)
+
+Used values:
+<4 args_0_.1 @0>
+ positions:
+  args_0_.1
+ uses:
+  slice_convert_fusion, operand 0
+ from instruction: %args_0_.1 = bf16[5120,2048]{1,0} parameter(0), metadata={op_name="args[0]"}
+<5 slice_convert_fusion @0>
+ positions:
+  slice_convert_fusion
+ uses:
+ from instruction: %slice_convert_fusion = bf16[512,2048]{1,0} fusion(%args_0_.1), kind=kLoop, calls=%fused_computation, backend_config={"outer_dimension_partitions":["14"]}
+
+
+HloLiveRange (max 2):
+  InstructionSequence:
+    0:args_0_.1
+    1:slice_convert_fusion
+  BufferLiveRange:
+    args_0_.1{}:0-2
+    slice_convert_fusion{}:1-2
+  Live ranges at 1 (peak):
+    args_0_.1{}: 20971520 bytes (cumulative: 20971520 bytes)
+    slice_convert_fusion{}: 2097152 bytes (cumulative: 23068672 bytes)
+  Stack trace breakdown for peak usage: 23 068 672 bytes
+    main.1 (100.0%, total: 23 068 672 bytes, current: 0 bytes, remaining: 23 068 672 bytes)
+      ├── args[0] (90.9%, total: 20 971 520 bytes, current: 20 971 520 bytes, remaining: 2 097 152 bytes)
+      └── slice_convert_fusion (9.1%, total: 2 097 152 bytes, current: 2 097 152 bytes, remaining: 0 bytes)

@@ -1,0 +1,3 @@
+xla_cpu_enable_fast_min_max: false
+xla_gpu_per_fusion_autotune_cache_dir: "/home/eporat/benchmarking_qwen_omni_tpu/.cache/jax_cache/xla_gpu_per_fusion_autotune_cache_dir"
+xla_dump_to: "/home/eporat/benchmarking_qwen_omni_tpu"

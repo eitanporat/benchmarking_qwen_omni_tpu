@@ -1,0 +1,269 @@
+; ModuleID = '__compute_module_convert_element_type.1_elemental_kernel_module'
+source_filename = "__compute_module_convert_element_type.1_elemental_kernel_module"
+target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-unknown-linux-gnu"
+
+; Function Attrs: uwtable
+define noalias noundef ptr @convert_element_type.1_kernel(ptr readonly captures(none) %0) local_unnamed_addr #0 {
+vector.ph:
+  %args_gep = getelementptr inbounds nuw i8, ptr %0, i64 24
+  %args = load ptr, ptr %args_gep, align 8
+  %arg1_gep = getelementptr i8, ptr %args, i64 16
+  %arg1 = load ptr, ptr %arg1_gep, align 8, !invariant.load !3, !dereferenceable !4, !align !5
+  %arg0 = load ptr, ptr %args, align 8, !invariant.load !3, !dereferenceable !6, !align !5
+  %1 = getelementptr inbounds nuw i8, ptr %arg0, i64 32
+  %2 = getelementptr inbounds nuw i8, ptr %arg0, i64 64
+  %3 = getelementptr inbounds nuw i8, ptr %arg0, i64 96
+  %wide.load = load <8 x float>, ptr %arg0, align 64, !invariant.load !3, !noalias !7
+  %wide.load4 = load <8 x float>, ptr %1, align 32, !invariant.load !3, !noalias !7
+  %wide.load5 = load <8 x float>, ptr %2, align 64, !invariant.load !3, !noalias !7
+  %wide.load6 = load <8 x float>, ptr %3, align 32, !invariant.load !3, !noalias !7
+  %4 = bitcast <8 x float> %wide.load to <8 x i32>
+  %5 = lshr <8 x i32> %4, splat (i32 16)
+  %6 = and <8 x i32> %5, splat (i32 1)
+  %7 = add nuw nsw <8 x i32> %6, splat (i32 32767)
+  %8 = fcmp uno <8 x float> %wide.load, zeroinitializer
+  %9 = and <8 x i32> %4, splat (i32 -8388608)
+  %10 = or disjoint <8 x i32> %9, splat (i32 4194304)
+  %11 = add <8 x i32> %7, %4
+  %12 = select <8 x i1> %8, <8 x i32> %10, <8 x i32> %11
+  %13 = lshr <8 x i32> %12, splat (i32 16)
+  %14 = trunc nuw <8 x i32> %13 to <8 x i16>
+  %15 = bitcast <8 x float> %wide.load4 to <8 x i32>
+  %16 = lshr <8 x i32> %15, splat (i32 16)
+  %17 = and <8 x i32> %16, splat (i32 1)
+  %18 = add nuw nsw <8 x i32> %17, splat (i32 32767)
+  %19 = fcmp uno <8 x float> %wide.load4, zeroinitializer
+  %20 = and <8 x i32> %15, splat (i32 -8388608)
+  %21 = or disjoint <8 x i32> %20, splat (i32 4194304)
+  %22 = add <8 x i32> %18, %15
+  %23 = select <8 x i1> %19, <8 x i32> %21, <8 x i32> %22
+  %24 = lshr <8 x i32> %23, splat (i32 16)
+  %25 = trunc nuw <8 x i32> %24 to <8 x i16>
+  %26 = bitcast <8 x float> %wide.load5 to <8 x i32>
+  %27 = lshr <8 x i32> %26, splat (i32 16)
+  %28 = and <8 x i32> %27, splat (i32 1)
+  %29 = add nuw nsw <8 x i32> %28, splat (i32 32767)
+  %30 = fcmp uno <8 x float> %wide.load5, zeroinitializer
+  %31 = and <8 x i32> %26, splat (i32 -8388608)
+  %32 = or disjoint <8 x i32> %31, splat (i32 4194304)
+  %33 = add <8 x i32> %29, %26
+  %34 = select <8 x i1> %30, <8 x i32> %32, <8 x i32> %33
+  %35 = lshr <8 x i32> %34, splat (i32 16)
+  %36 = trunc nuw <8 x i32> %35 to <8 x i16>
+  %37 = bitcast <8 x float> %wide.load6 to <8 x i32>
+  %38 = lshr <8 x i32> %37, splat (i32 16)
+  %39 = and <8 x i32> %38, splat (i32 1)
+  %40 = add nuw nsw <8 x i32> %39, splat (i32 32767)
+  %41 = fcmp uno <8 x float> %wide.load6, zeroinitializer
+  %42 = and <8 x i32> %37, splat (i32 -8388608)
+  %43 = or disjoint <8 x i32> %42, splat (i32 4194304)
+  %44 = add <8 x i32> %40, %37
+  %45 = select <8 x i1> %41, <8 x i32> %43, <8 x i32> %44
+  %46 = lshr <8 x i32> %45, splat (i32 16)
+  %47 = trunc nuw <8 x i32> %46 to <8 x i16>
+  %48 = getelementptr inbounds nuw i8, ptr %arg1, i64 16
+  %49 = getelementptr inbounds nuw i8, ptr %arg1, i64 32
+  %50 = getelementptr inbounds nuw i8, ptr %arg1, i64 48
+  store <8 x i16> %14, ptr %arg1, align 64, !alias.scope !7
+  store <8 x i16> %25, ptr %48, align 16, !alias.scope !7
+  store <8 x i16> %36, ptr %49, align 32, !alias.scope !7
+  store <8 x i16> %47, ptr %50, align 16, !alias.scope !7
+  %51 = getelementptr inbounds nuw i8, ptr %arg0, i64 128
+  %52 = getelementptr inbounds nuw i8, ptr %arg0, i64 160
+  %53 = getelementptr inbounds nuw i8, ptr %arg0, i64 192
+  %54 = getelementptr inbounds nuw i8, ptr %arg0, i64 224
+  %wide.load.1 = load <8 x float>, ptr %51, align 64, !invariant.load !3, !noalias !7
+  %wide.load4.1 = load <8 x float>, ptr %52, align 32, !invariant.load !3, !noalias !7
+  %wide.load5.1 = load <8 x float>, ptr %53, align 64, !invariant.load !3, !noalias !7
+  %wide.load6.1 = load <8 x float>, ptr %54, align 32, !invariant.load !3, !noalias !7
+  %55 = bitcast <8 x float> %wide.load.1 to <8 x i32>
+  %56 = lshr <8 x i32> %55, splat (i32 16)
+  %57 = and <8 x i32> %56, splat (i32 1)
+  %58 = add nuw nsw <8 x i32> %57, splat (i32 32767)
+  %59 = fcmp uno <8 x float> %wide.load.1, zeroinitializer
+  %60 = and <8 x i32> %55, splat (i32 -8388608)
+  %61 = or disjoint <8 x i32> %60, splat (i32 4194304)
+  %62 = add <8 x i32> %58, %55
+  %63 = select <8 x i1> %59, <8 x i32> %61, <8 x i32> %62
+  %64 = lshr <8 x i32> %63, splat (i32 16)
+  %65 = trunc nuw <8 x i32> %64 to <8 x i16>
+  %66 = bitcast <8 x float> %wide.load4.1 to <8 x i32>
+  %67 = lshr <8 x i32> %66, splat (i32 16)
+  %68 = and <8 x i32> %67, splat (i32 1)
+  %69 = add nuw nsw <8 x i32> %68, splat (i32 32767)
+  %70 = fcmp uno <8 x float> %wide.load4.1, zeroinitializer
+  %71 = and <8 x i32> %66, splat (i32 -8388608)
+  %72 = or disjoint <8 x i32> %71, splat (i32 4194304)
+  %73 = add <8 x i32> %69, %66
+  %74 = select <8 x i1> %70, <8 x i32> %72, <8 x i32> %73
+  %75 = lshr <8 x i32> %74, splat (i32 16)
+  %76 = trunc nuw <8 x i32> %75 to <8 x i16>
+  %77 = bitcast <8 x float> %wide.load5.1 to <8 x i32>
+  %78 = lshr <8 x i32> %77, splat (i32 16)
+  %79 = and <8 x i32> %78, splat (i32 1)
+  %80 = add nuw nsw <8 x i32> %79, splat (i32 32767)
+  %81 = fcmp uno <8 x float> %wide.load5.1, zeroinitializer
+  %82 = and <8 x i32> %77, splat (i32 -8388608)
+  %83 = or disjoint <8 x i32> %82, splat (i32 4194304)
+  %84 = add <8 x i32> %80, %77
+  %85 = select <8 x i1> %81, <8 x i32> %83, <8 x i32> %84
+  %86 = lshr <8 x i32> %85, splat (i32 16)
+  %87 = trunc nuw <8 x i32> %86 to <8 x i16>
+  %88 = bitcast <8 x float> %wide.load6.1 to <8 x i32>
+  %89 = lshr <8 x i32> %88, splat (i32 16)
+  %90 = and <8 x i32> %89, splat (i32 1)
+  %91 = add nuw nsw <8 x i32> %90, splat (i32 32767)
+  %92 = fcmp uno <8 x float> %wide.load6.1, zeroinitializer
+  %93 = and <8 x i32> %88, splat (i32 -8388608)
+  %94 = or disjoint <8 x i32> %93, splat (i32 4194304)
+  %95 = add <8 x i32> %91, %88
+  %96 = select <8 x i1> %92, <8 x i32> %94, <8 x i32> %95
+  %97 = lshr <8 x i32> %96, splat (i32 16)
+  %98 = trunc nuw <8 x i32> %97 to <8 x i16>
+  %99 = getelementptr inbounds nuw i8, ptr %arg1, i64 64
+  %100 = getelementptr inbounds nuw i8, ptr %arg1, i64 80
+  %101 = getelementptr inbounds nuw i8, ptr %arg1, i64 96
+  %102 = getelementptr inbounds nuw i8, ptr %arg1, i64 112
+  store <8 x i16> %65, ptr %99, align 64, !alias.scope !7
+  store <8 x i16> %76, ptr %100, align 16, !alias.scope !7
+  store <8 x i16> %87, ptr %101, align 32, !alias.scope !7
+  store <8 x i16> %98, ptr %102, align 16, !alias.scope !7
+  %103 = getelementptr inbounds nuw i8, ptr %arg0, i64 256
+  %104 = getelementptr inbounds nuw i8, ptr %arg0, i64 288
+  %105 = getelementptr inbounds nuw i8, ptr %arg0, i64 320
+  %106 = getelementptr inbounds nuw i8, ptr %arg0, i64 352
+  %wide.load.2 = load <8 x float>, ptr %103, align 64, !invariant.load !3, !noalias !7
+  %wide.load4.2 = load <8 x float>, ptr %104, align 32, !invariant.load !3, !noalias !7
+  %wide.load5.2 = load <8 x float>, ptr %105, align 64, !invariant.load !3, !noalias !7
+  %wide.load6.2 = load <8 x float>, ptr %106, align 32, !invariant.load !3, !noalias !7
+  %107 = bitcast <8 x float> %wide.load.2 to <8 x i32>
+  %108 = lshr <8 x i32> %107, splat (i32 16)
+  %109 = and <8 x i32> %108, splat (i32 1)
+  %110 = add nuw nsw <8 x i32> %109, splat (i32 32767)
+  %111 = fcmp uno <8 x float> %wide.load.2, zeroinitializer
+  %112 = and <8 x i32> %107, splat (i32 -8388608)
+  %113 = or disjoint <8 x i32> %112, splat (i32 4194304)
+  %114 = add <8 x i32> %110, %107
+  %115 = select <8 x i1> %111, <8 x i32> %113, <8 x i32> %114
+  %116 = lshr <8 x i32> %115, splat (i32 16)
+  %117 = trunc nuw <8 x i32> %116 to <8 x i16>
+  %118 = bitcast <8 x float> %wide.load4.2 to <8 x i32>
+  %119 = lshr <8 x i32> %118, splat (i32 16)
+  %120 = and <8 x i32> %119, splat (i32 1)
+  %121 = add nuw nsw <8 x i32> %120, splat (i32 32767)
+  %122 = fcmp uno <8 x float> %wide.load4.2, zeroinitializer
+  %123 = and <8 x i32> %118, splat (i32 -8388608)
+  %124 = or disjoint <8 x i32> %123, splat (i32 4194304)
+  %125 = add <8 x i32> %121, %118
+  %126 = select <8 x i1> %122, <8 x i32> %124, <8 x i32> %125
+  %127 = lshr <8 x i32> %126, splat (i32 16)
+  %128 = trunc nuw <8 x i32> %127 to <8 x i16>
+  %129 = bitcast <8 x float> %wide.load5.2 to <8 x i32>
+  %130 = lshr <8 x i32> %129, splat (i32 16)
+  %131 = and <8 x i32> %130, splat (i32 1)
+  %132 = add nuw nsw <8 x i32> %131, splat (i32 32767)
+  %133 = fcmp uno <8 x float> %wide.load5.2, zeroinitializer
+  %134 = and <8 x i32> %129, splat (i32 -8388608)
+  %135 = or disjoint <8 x i32> %134, splat (i32 4194304)
+  %136 = add <8 x i32> %132, %129
+  %137 = select <8 x i1> %133, <8 x i32> %135, <8 x i32> %136
+  %138 = lshr <8 x i32> %137, splat (i32 16)
+  %139 = trunc nuw <8 x i32> %138 to <8 x i16>
+  %140 = bitcast <8 x float> %wide.load6.2 to <8 x i32>
+  %141 = lshr <8 x i32> %140, splat (i32 16)
+  %142 = and <8 x i32> %141, splat (i32 1)
+  %143 = add nuw nsw <8 x i32> %142, splat (i32 32767)
+  %144 = fcmp uno <8 x float> %wide.load6.2, zeroinitializer
+  %145 = and <8 x i32> %140, splat (i32 -8388608)
+  %146 = or disjoint <8 x i32> %145, splat (i32 4194304)
+  %147 = add <8 x i32> %143, %140
+  %148 = select <8 x i1> %144, <8 x i32> %146, <8 x i32> %147
+  %149 = lshr <8 x i32> %148, splat (i32 16)
+  %150 = trunc nuw <8 x i32> %149 to <8 x i16>
+  %151 = getelementptr inbounds nuw i8, ptr %arg1, i64 128
+  %152 = getelementptr inbounds nuw i8, ptr %arg1, i64 144
+  %153 = getelementptr inbounds nuw i8, ptr %arg1, i64 160
+  %154 = getelementptr inbounds nuw i8, ptr %arg1, i64 176
+  store <8 x i16> %117, ptr %151, align 64, !alias.scope !7
+  store <8 x i16> %128, ptr %152, align 16, !alias.scope !7
+  store <8 x i16> %139, ptr %153, align 32, !alias.scope !7
+  store <8 x i16> %150, ptr %154, align 16, !alias.scope !7
+  %155 = getelementptr inbounds nuw i8, ptr %arg0, i64 384
+  %156 = getelementptr inbounds nuw i8, ptr %arg0, i64 416
+  %157 = getelementptr inbounds nuw i8, ptr %arg0, i64 448
+  %158 = getelementptr inbounds nuw i8, ptr %arg0, i64 480
+  %wide.load.3 = load <8 x float>, ptr %155, align 64, !invariant.load !3, !noalias !7
+  %wide.load4.3 = load <8 x float>, ptr %156, align 32, !invariant.load !3, !noalias !7
+  %wide.load5.3 = load <8 x float>, ptr %157, align 64, !invariant.load !3, !noalias !7
+  %wide.load6.3 = load <8 x float>, ptr %158, align 32, !invariant.load !3, !noalias !7
+  %159 = bitcast <8 x float> %wide.load.3 to <8 x i32>
+  %160 = lshr <8 x i32> %159, splat (i32 16)
+  %161 = and <8 x i32> %160, splat (i32 1)
+  %162 = add nuw nsw <8 x i32> %161, splat (i32 32767)
+  %163 = fcmp uno <8 x float> %wide.load.3, zeroinitializer
+  %164 = and <8 x i32> %159, splat (i32 -8388608)
+  %165 = or disjoint <8 x i32> %164, splat (i32 4194304)
+  %166 = add <8 x i32> %162, %159
+  %167 = select <8 x i1> %163, <8 x i32> %165, <8 x i32> %166
+  %168 = lshr <8 x i32> %167, splat (i32 16)
+  %169 = trunc nuw <8 x i32> %168 to <8 x i16>
+  %170 = bitcast <8 x float> %wide.load4.3 to <8 x i32>
+  %171 = lshr <8 x i32> %170, splat (i32 16)
+  %172 = and <8 x i32> %171, splat (i32 1)
+  %173 = add nuw nsw <8 x i32> %172, splat (i32 32767)
+  %174 = fcmp uno <8 x float> %wide.load4.3, zeroinitializer
+  %175 = and <8 x i32> %170, splat (i32 -8388608)
+  %176 = or disjoint <8 x i32> %175, splat (i32 4194304)
+  %177 = add <8 x i32> %173, %170
+  %178 = select <8 x i1> %174, <8 x i32> %176, <8 x i32> %177
+  %179 = lshr <8 x i32> %178, splat (i32 16)
+  %180 = trunc nuw <8 x i32> %179 to <8 x i16>
+  %181 = bitcast <8 x float> %wide.load5.3 to <8 x i32>
+  %182 = lshr <8 x i32> %181, splat (i32 16)
+  %183 = and <8 x i32> %182, splat (i32 1)
+  %184 = add nuw nsw <8 x i32> %183, splat (i32 32767)
+  %185 = fcmp uno <8 x float> %wide.load5.3, zeroinitializer
+  %186 = and <8 x i32> %181, splat (i32 -8388608)
+  %187 = or disjoint <8 x i32> %186, splat (i32 4194304)
+  %188 = add <8 x i32> %184, %181
+  %189 = select <8 x i1> %185, <8 x i32> %187, <8 x i32> %188
+  %190 = lshr <8 x i32> %189, splat (i32 16)
+  %191 = trunc nuw <8 x i32> %190 to <8 x i16>
+  %192 = bitcast <8 x float> %wide.load6.3 to <8 x i32>
+  %193 = lshr <8 x i32> %192, splat (i32 16)
+  %194 = and <8 x i32> %193, splat (i32 1)
+  %195 = add nuw nsw <8 x i32> %194, splat (i32 32767)
+  %196 = fcmp uno <8 x float> %wide.load6.3, zeroinitializer
+  %197 = and <8 x i32> %192, splat (i32 -8388608)
+  %198 = or disjoint <8 x i32> %197, splat (i32 4194304)
+  %199 = add <8 x i32> %195, %192
+  %200 = select <8 x i1> %196, <8 x i32> %198, <8 x i32> %199
+  %201 = lshr <8 x i32> %200, splat (i32 16)
+  %202 = trunc nuw <8 x i32> %201 to <8 x i16>
+  %203 = getelementptr inbounds nuw i8, ptr %arg1, i64 192
+  %204 = getelementptr inbounds nuw i8, ptr %arg1, i64 208
+  %205 = getelementptr inbounds nuw i8, ptr %arg1, i64 224
+  %206 = getelementptr inbounds nuw i8, ptr %arg1, i64 240
+  store <8 x i16> %169, ptr %203, align 64, !alias.scope !7
+  store <8 x i16> %180, ptr %204, align 16, !alias.scope !7
+  store <8 x i16> %191, ptr %205, align 32, !alias.scope !7
+  store <8 x i16> %202, ptr %206, align 16, !alias.scope !7
+  ret ptr null
+}
+
+attributes #0 = { uwtable "frame-pointer"="all" "prefer-vector-width"="256" }
+
+!xla_cpu_memory_region_name = !{!0, !1}
+!llvm.module.flags = !{!2}
+
+!0 = !{!"xla_cpu_emitter__elemental_kernel_emitter__hlo_opcode__convert"}
+!1 = !{!"ir_emitter"}
+!2 = !{i32 1, !"xla_dylib_index", i64 0}
+!3 = !{}
+!4 = !{i64 256}
+!5 = !{i64 64}
+!6 = !{i64 512}
+!7 = !{!8}
+!8 = !{!"result slice: {index:1, offset:0, size:256}", !9}
+!9 = !{!"XLA host kernel convert_element_type.1_kernel AA domain"}

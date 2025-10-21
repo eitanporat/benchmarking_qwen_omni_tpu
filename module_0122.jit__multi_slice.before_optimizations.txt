@@ -1,0 +1,11 @@
+HloModule jit__multi_slice, entry_computation_layout={(bf16[2048,4608]{1,0})->(bf16[2048,1152]{1,0}, bf16[2048,1152]{1,0}, bf16[2048,1152]{1,0}, bf16[2048,1152]{1,0})}, allow_spmd_sharding_propagation_to_parameters={true}, allow_spmd_sharding_propagation_to_output={true,true,true,true}
+
+ENTRY %main.1 (self.1: bf16[2048,4608]) -> (bf16[2048,1152], bf16[2048,1152], bf16[2048,1152], bf16[2048,1152]) {
+  %self.1 = bf16[2048,4608]{1,0} parameter(0), metadata={op_name="self"}
+  %slice.4 = bf16[2048,1152]{1,0} slice(%self.1), slice={[0:2048], [0:1152]}, metadata={op_name="jit(_multi_slice)/slice" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/layers/vllm/linear_common.py" source_line=133 source_end_line=133 source_column=17 source_end_column=49}
+  %slice.5 = bf16[2048,1152]{1,0} slice(%self.1), slice={[0:2048], [1152:2304]}, metadata={op_name="jit(_multi_slice)/slice" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/layers/vllm/linear_common.py" source_line=133 source_end_line=133 source_column=17 source_end_column=49}
+  %slice.6 = bf16[2048,1152]{1,0} slice(%self.1), slice={[0:2048], [2304:3456]}, metadata={op_name="jit(_multi_slice)/slice" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/layers/vllm/linear_common.py" source_line=133 source_end_line=133 source_column=17 source_end_column=49}
+  %slice.7 = bf16[2048,1152]{1,0} slice(%self.1), slice={[0:2048], [3456:4608]}, metadata={op_name="jit(_multi_slice)/slice" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/layers/vllm/linear_common.py" source_line=133 source_end_line=133 source_column=17 source_end_column=49}
+  ROOT %tuple.1 = (bf16[2048,1152]{1,0}, bf16[2048,1152]{1,0}, bf16[2048,1152]{1,0}, bf16[2048,1152]{1,0}) tuple(%slice.4, %slice.5, %slice.6, %slice.7)
+}
+

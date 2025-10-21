@@ -1,0 +1,20 @@
+HloModule jit_concatenate, is_scheduled=true, entry_computation_layout={(bf16[4,1024,2048]{2,1,0}, bf16[4,128,2048]{2,1,0}, bf16[4,128,2048]{2,1,0})->bf16[4,1280,2048]{2,1,0}}, allow_spmd_sharding_propagation_to_parameters={true,true,true}, allow_spmd_sharding_propagation_to_output={true}
+
+%fused_computation (param_0.2: bf16[4,128,2048], param_1.2: bf16[4,128,2048], param_2.3: bf16[4,1024,2048]) -> bf16[4,1280,2048] {
+  %param_2.3 = bf16[4,1024,2048]{2,1,0} parameter(2)
+  %convert.7 = f32[4,1024,2048]{2,1,0} convert(%param_2.3)
+  %param_1.2 = bf16[4,128,2048]{2,1,0} parameter(1)
+  %convert.6 = f32[4,128,2048]{2,1,0} convert(%param_1.2)
+  %param_0.2 = bf16[4,128,2048]{2,1,0} parameter(0)
+  %convert.5 = f32[4,128,2048]{2,1,0} convert(%param_0.2)
+  %concatenate.0 = f32[4,1280,2048]{2,1,0} concatenate(%convert.7, %convert.6, %convert.5), dimensions={1}, metadata={op_name="jit(concatenate)/concatenate" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/layers/vllm/linear_common.py" source_line=71 source_end_line=71 source_column=23 source_end_column=67}
+  ROOT %convert.4 = bf16[4,1280,2048]{2,1,0} convert(%concatenate.0)
+}
+
+ENTRY %main.1 (args_0_.1: bf16[4,1024,2048], args_1_.1: bf16[4,128,2048], args_2_.1: bf16[4,128,2048]) -> bf16[4,1280,2048] {
+  %args_0_.1 = bf16[4,1024,2048]{2,1,0} parameter(0), metadata={op_name="args[0]"}
+  %args_1_.1 = bf16[4,128,2048]{2,1,0} parameter(1), metadata={op_name="args[1]"}
+  %args_2_.1 = bf16[4,128,2048]{2,1,0} parameter(2), metadata={op_name="args[2]"}
+  ROOT %concatenate_convert_fusion = bf16[4,1280,2048]{2,1,0} fusion(%args_2_.1, %args_1_.1, %args_0_.1), kind=kLoop, calls=%fused_computation, backend_config={"outer_dimension_partitions":["4","3"]}
+}
+

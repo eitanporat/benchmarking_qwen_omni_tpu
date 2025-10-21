@@ -40,11 +40,22 @@ export VLLM_XLA_CHECK_RECOMPILATION=1
 # export MAX_NUM_SEQS=
 # export MAX_NUM_BATCHED_TOKENS=
 
-# Add to bashrc for persistence
-echo 'export HF_HOME=/dev/shm' >> ~/.bashrc
-echo 'export XLA_FLAGS="--xla_dump_to=/home/eporat/benchmarking_qwen_omni_tpu"' >> ~/.bashrc
-echo 'export JAX_COMPILATION_CACHE_DIR=/home/eporat/benchmarking_qwen_omni_tpu' >> ~/.bashrc
-echo 'export JAX_ENABLE_COMPILATION_CACHE=1' >> ~/.bashrc
-echo 'export VLLM_XLA_CACHE_PATH="$JAX_COMPILATION_CACHE_DIR/.cache/jax_cache"' >> ~/.bashrc
-echo 'export VLLM_USE_V1=1' >> ~/.bashrc
-echo 'export VLLM_XLA_CHECK_RECOMPILATION=1' >> ~/.bashrc
+# Add to shell rc files for persistence
+for rc_file in ~/.bashrc ~/.zshrc; do
+  if [ -f "$rc_file" ]; then
+    echo 'export HF_HOME=/dev/shm' >> "$rc_file"
+    echo 'export XLA_FLAGS="--xla_dump_to=/home/eporat/benchmarking_qwen_omni_tpu"' >> "$rc_file"
+    echo 'export JAX_COMPILATION_CACHE_DIR=/home/eporat/benchmarking_qwen_omni_tpu' >> "$rc_file"
+    echo 'export JAX_ENABLE_COMPILATION_CACHE=1' >> "$rc_file"
+    echo 'export VLLM_XLA_CACHE_PATH="$JAX_COMPILATION_CACHE_DIR/.cache/jax_cache"' >> "$rc_file"
+    echo 'export VLLM_USE_V1=1' >> "$rc_file"
+    echo 'export VLLM_XLA_CHECK_RECOMPILATION=1' >> "$rc_file"
+  fi
+done
+
+# Source the appropriate rc file to load environment variables
+if [ -n "$ZSH_VERSION" ]; then
+  source ~/.zshrc 2>/dev/null || true
+elif [ -n "$BASH_VERSION" ]; then
+  source ~/.bashrc 2>/dev/null || true
+fi

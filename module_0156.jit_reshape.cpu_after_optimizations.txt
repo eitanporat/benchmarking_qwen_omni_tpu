@@ -1,0 +1,8 @@
+HloModule jit_reshape, is_scheduled=true, entry_computation_layout={(bf16[1,2048,4096]{2,1,0})->bf16[2048,4096]{1,0}}, allow_spmd_sharding_propagation_to_parameters={true}, allow_spmd_sharding_propagation_to_output={true}
+
+ENTRY %main.1 (args_0_.1: bf16[1,2048,4096]) -> bf16[2048,4096] {
+  %args_0_.1 = bf16[1,2048,4096]{2,1,0} parameter(0), metadata={op_name="args[0]"}
+  %bitcast = bf16[2048,4096]{1,0} bitcast(%args_0_.1), metadata={op_name="args[0]"}
+  ROOT %copy = bf16[2048,4096]{1,0} copy(%bitcast)
+}
+
