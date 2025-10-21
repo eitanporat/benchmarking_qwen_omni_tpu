@@ -1,3 +1,14 @@
 [2025-10-21 14:06:04] ACTION: Repository 'benchmarking_qwen_omni_tpu' created on GitHub
 [2025-10-21 14:06:04] ACTION: Repository URL: https://github.com/eitanporat/benchmarking_qwen_omni_tpu
 [2025-10-21 14:06:04] ACTION: Local repository initialized at /home/eporat/benchmarking_qwen_omni_tpu
+[2025-10-21 14:08:07] Created GitHub repository 'benchmarking_qwen_omni_tpu'
+[2025-10-21 14:08:07] Repository URL: https://github.com/eitanporat/benchmarking_qwen_omni_tpu
+[2025-10-21 14:08:07] Initialized local git repository
+[2025-10-21 14:08:07] Created README.md file
+[2025-10-21 14:08:07] Created action_log.sh script
+[2025-10-21 14:08:07] Created log_action.sh helper script
+[2025-10-21 14:08:07] Set git config: user.email=eitan.porat@weizmann.ac.il
+[2025-10-21 14:08:07] Set git config: user.name=Eitan Porat
+[2025-10-21 14:08:07] Created initial commit (e1c34f1)
+[2025-10-21 14:08:07] Added remote origin with PAT authentication
+[2025-10-21 14:08:07] Pushed to main branch on GitHub
