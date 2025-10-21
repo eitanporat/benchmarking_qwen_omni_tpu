@@ -1,0 +1,36 @@
+BufferAssignment:
+allocation 0: size 100663296, parameter 0, shape |bf16[128,2048,192]| at ShapeIndex {}:
+ value: <0 param @0> (size=100663296,offset=0): bf16[128,2048,192]{1,2,0:T(8,128)(2,1)}
+allocation 1: size 134217728, output shape is |bf16[128,2048,192]|, maybe-live-out:
+ value: <1 copy @0> (size=134217728,offset=0): bf16[128,2048,192]{2,1,0:T(8,128)(2,1)}
+allocation 2: size 0, color 1, preallocated-temp:
+
+Total bytes used: 234881024 (224.00MiB)
+
+Used values:
+<0 param @0>
+ positions:
+  param
+ uses:
+  copy, operand 0
+ from instruction: %param = bf16[128,2048,192]{1,2,0:T(8,128)(2,1)} parameter(0), sharding={devices=[1,1,4]<=[4]}, metadata={op_name="x"}
+<1 copy @0>
+ positions:
+  copy
+ uses:
+ from instruction: %copy = bf16[128,2048,192]{2,1,0:T(8,128)(2,1)} copy(%param), sharding={devices=[1,1,4]<=[4]}, metadata={op_name="x"}
+
+
+HloLiveRange (max 2):
+  InstructionSequence:
+    0:param
+    1:copy
+  BufferLiveRange:
+    param{}:0-2
+    copy{}:1-2
+  Live ranges at 1 (peak):
+    copy{}: 100663296 bytes (cumulative: 100663296 bytes)
+    param{}: 100663296 bytes (cumulative: 201326592 bytes)
+  Stack trace breakdown for peak usage: 201 326 592 bytes
+    main.4_spmd (100.0%, total: 201 326 592 bytes, current: 0 bytes, remaining: 201 326 592 bytes)
+      └── x (100.0%, total: 201 326 592 bytes, current: 201 326 592 bytes, remaining: 0 bytes)

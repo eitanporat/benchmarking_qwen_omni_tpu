@@ -1,0 +1,49 @@
+BufferAssignment:
+allocation 0: size 512, parameter 0, shape |s32[]| at ShapeIndex {}:
+ value: <0 args_0_.1 @0> (size=512,offset=0): s32[]{:T(128)}
+allocation 1: size 512, output shape is |s32[16]|, maybe-live-out:
+ value: <2 broadcast_in_dim.2 @0> (size=512,offset=0): s32[16]{0:T(128)}
+allocation 2: size 0, color 1, preallocated-temp:
+allocation 3: size 512, color 6, preallocated-temp:
+ value: <1 copy @6> (size=512,offset=0): s32[]{:T(128)S(6)}
+
+Total bytes used: 1536 (1.5KiB)
+
+Used values:
+<0 args_0_.1 @0>
+ positions:
+  args_0_.1
+ uses:
+  copy, operand 0
+ from instruction: %args_0_.1 = s32[]{:T(128)} parameter(0), metadata={op_name="args[0]"}
+<1 copy @6>
+ positions:
+  copy
+ uses:
+  broadcast_in_dim.2, operand 0
+ from instruction: %copy = s32[]{:T(128)S(6)} copy(%args_0_.1)
+<2 broadcast_in_dim.2 @0>
+ positions:
+  broadcast_in_dim.2
+ uses:
+ from instruction: %broadcast_in_dim.2 = s32[16]{0:T(128)} broadcast(%copy), dimensions={}, metadata={op_name="jit(broadcast_in_dim)/broadcast_in_dim" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/runner/compilation_manager.py" source_line=43 source_end_line=43 source_column=17 source_end_column=45}, backend_config={"flag_configs":[],"scoped_memory_configs":[],"used_scoped_memory_configs":[],"output_chunk_bound_config":{"output_chunk_bound":[]}}
+
+
+HloLiveRange (max 3):
+  InstructionSequence:
+    0:args_0_.1
+    1:copy
+    2:broadcast_in_dim.2
+  BufferLiveRange:
+    args_0_.1{}:0-3
+    copy{}:1-2
+    broadcast_in_dim.2{}:2-3
+  Live ranges at 2 (peak):
+    broadcast_in_dim.2{}: 64 bytes (cumulative: 64 bytes)
+    args_0_.1{}: 4 bytes (cumulative: 68 bytes)
+    copy{}: 4 bytes (cumulative: 72 bytes)
+  Stack trace breakdown for peak usage: 72 bytes
+    main.3 (100.0%, total: 72 bytes, current: 0 bytes, remaining: 72 bytes)
+      ├── jit(broadcast_in_dim)/broadcast_in_dim (88.9%, total: 64 bytes, current: 64 bytes, remaining: 8 bytes)
+      ├── args[0] (5.6%, total: 4 bytes, current: 4 bytes, remaining: 4 bytes)
+      └── copy (5.6%, total: 4 bytes, current: 4 bytes, remaining: 0 bytes)

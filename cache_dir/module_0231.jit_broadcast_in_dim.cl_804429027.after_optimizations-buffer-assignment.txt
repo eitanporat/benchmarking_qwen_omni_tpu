@@ -1,0 +1,49 @@
+BufferAssignment:
+allocation 0: size 512, parameter 0, shape |s32[]| at ShapeIndex {}:
+ value: <0 args_0_.1 @0> (size=512,offset=0): s32[]{:T(128)}
+allocation 1: size 2048, output shape is |s32[257]|, maybe-live-out:
+ value: <2 broadcast_in_dim.2 @0> (size=2048,offset=0): s32[257]{0:T(512)}
+allocation 2: size 0, color 1, preallocated-temp:
+allocation 3: size 512, color 6, preallocated-temp:
+ value: <1 copy @6> (size=512,offset=0): s32[]{:T(128)S(6)}
+
+Total bytes used: 3072 (3.0KiB)
+
+Used values:
+<0 args_0_.1 @0>
+ positions:
+  args_0_.1
+ uses:
+  copy, operand 0
+ from instruction: %args_0_.1 = s32[]{:T(128)} parameter(0), metadata={op_name="args[0]"}
+<1 copy @6>
+ positions:
+  copy
+ uses:
+  broadcast_in_dim.2, operand 0
+ from instruction: %copy = s32[]{:T(128)S(6)} copy(%args_0_.1)
+<2 broadcast_in_dim.2 @0>
+ positions:
+  broadcast_in_dim.2
+ uses:
+ from instruction: %broadcast_in_dim.2 = s32[257]{0:T(512)} broadcast(%copy), dimensions={}, metadata={op_name="jit(broadcast_in_dim)/broadcast_in_dim" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/runner/compilation_manager.py" source_line=43 source_end_line=43 source_column=17 source_end_column=45}, backend_config={"flag_configs":[],"scoped_memory_configs":[],"used_scoped_memory_configs":[],"output_chunk_bound_config":{"output_chunk_bound":[]}}
+
+
+HloLiveRange (max 3):
+  InstructionSequence:
+    0:args_0_.1
+    1:copy
+    2:broadcast_in_dim.2
+  BufferLiveRange:
+    args_0_.1{}:0-3
+    copy{}:1-2
+    broadcast_in_dim.2{}:2-3
+  Live ranges at 2 (peak):
+    broadcast_in_dim.2{}: 1028 bytes (cumulative: 1028 bytes)
+    args_0_.1{}: 4 bytes (cumulative: 1032 bytes)
+    copy{}: 4 bytes (cumulative: 1036 bytes)
+  Stack trace breakdown for peak usage: 1 036 bytes
+    main.3 (100.0%, total: 1 036 bytes, current: 0 bytes, remaining: 1 036 bytes)
+      ├── jit(broadcast_in_dim)/broadcast_in_dim (99.2%, total: 1 028 bytes, current: 1 028 bytes, remaining: 8 bytes)
+      ├── args[0] (0.4%, total: 4 bytes, current: 4 bytes, remaining: 4 bytes)
+      └── copy (0.4%, total: 4 bytes, current: 4 bytes, remaining: 0 bytes)

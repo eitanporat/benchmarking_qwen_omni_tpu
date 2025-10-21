@@ -1,0 +1,10 @@
+HloModule jit__allocate, entry_computation_layout={()->bf16[14813,32,4,2,128]{4,3,2,1,0:T(2,128)(2,1)}}, num_partitions=4, frontend_attributes={xla.sdy.meshes={mesh = #sdy.mesh<["data"=1, "model"=4]>}}
+
+ENTRY %main.6 () -> bf16[14813,32,4,2,128] {
+  %constant.1 = bf16[] constant(0)
+  %broadcast_in_dim.2 = bf16[14813,32,4,2,128]{4,3,2,1,0} broadcast(%constant.1), dimensions={}, metadata={op_name="jit(_allocate)/broadcast_in_dim" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/runner/kv_cache.py" source_line=72 source_end_line=75 source_column=15 source_end_column=9}
+  %broadcast_in_dim.3 = bf16[14813,32,4,2,128]{4,3,2,1,0} custom-call(%broadcast_in_dim.2), custom_call_target="xla.sdy.FuncResultSharding", custom_call_has_side_effect=true, frontend_attributes={xla.sdy.sharding="#sdy.sharding_per_value<[<@mesh, [{}, {}, {\"model\"}, {}, {}]>]>"}, metadata={op_name="jit(_allocate)/broadcast_in_dim" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/runner/kv_cache.py" source_line=72 source_end_line=75 source_column=15 source_end_column=9}
+  %tuple.4 = (bf16[14813,32,4,2,128]{4,3,2,1,0}) tuple(%broadcast_in_dim.3)
+  ROOT %get-tuple-element.5 = bf16[14813,32,4,2,128]{4,3,2,1,0} get-tuple-element(%tuple.4), index=0, sharding={devices=[1,1,4,1,1]<=[4]}
+}
+

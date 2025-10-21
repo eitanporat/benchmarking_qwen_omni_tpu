@@ -1,0 +1,23 @@
+HloModule jit__threefry_seed, is_scheduled=true, entry_computation_layout={(s32[]{:T(128)})->u32[2]{0:T(128)}}, allow_spmd_sharding_propagation_to_parameters={true}, allow_spmd_sharding_propagation_to_output={true}
+
+%fused_computation (param_0.1: u32[1], param_1.3: u32[1]) -> u32[2] {
+  %param_1.3 = u32[1]{0:T(128)} parameter(1)
+  %constant.1 = u32[]{:T(128)} constant(0)
+  %pad.3 = u32[2]{0:T(128)} pad(%param_1.3, %constant.1), padding=0_1, metadata={op_name="jit(_threefry_seed)/concatenate" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/runner/tpu_jax_runner.py" source_line=147 source_end_line=147 source_column=23 source_end_column=61}
+  %param_0.1 = u32[1]{0:T(128)} parameter(0)
+  %pad.2 = u32[2]{0:T(128)} pad(%param_0.1, %constant.1), padding=1_0, metadata={op_name="jit(_threefry_seed)/concatenate" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/runner/tpu_jax_runner.py" source_line=147 source_end_line=147 source_column=23 source_end_column=61}
+  ROOT %add.1 = u32[2]{0:T(128)} add(%pad.3, %pad.2), metadata={op_name="jit(_threefry_seed)/concatenate" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/runner/tpu_jax_runner.py" source_line=147 source_end_line=147 source_column=23 source_end_column=61}
+}
+
+ENTRY %main.9 (seed.1: s32[]) -> u32[2] {
+  %constant.2 = s32[]{:T(128)} constant(32)
+  %seed.1 = s32[]{:T(128)} parameter(0), metadata={op_name="seed"}
+  %copy = s32[]{:T(128)S(6)} copy(%seed.1)
+  %convert_element_type.6 = u32[]{:T(128)} convert(%copy), metadata={op_name="jit(_threefry_seed)/convert_element_type" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/runner/tpu_jax_runner.py" source_line=147 source_end_line=147 source_column=23 source_end_column=61}
+  %shift_right_logical.3 = s32[]{:T(128)S(6)} shift-right-logical(%copy, %constant.2), metadata={op_name="jit(_threefry_seed)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/runner/tpu_jax_runner.py" source_line=147 source_end_line=147 source_column=23 source_end_column=61}
+  %convert_element_type.4 = u32[]{:T(128)} convert(%shift_right_logical.3), metadata={op_name="jit(_threefry_seed)/convert_element_type" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/runner/tpu_jax_runner.py" source_line=147 source_end_line=147 source_column=23 source_end_column=61}
+  %bitcast.1 = u32[1]{0:T(128)} bitcast(%convert_element_type.6), metadata={op_name="jit(_threefry_seed)/broadcast_in_dim" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/runner/tpu_jax_runner.py" source_line=147 source_end_line=147 source_column=23 source_end_column=61}
+  %bitcast = u32[1]{0:T(128)} bitcast(%convert_element_type.4), metadata={op_name="jit(_threefry_seed)/broadcast_in_dim" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/runner/tpu_jax_runner.py" source_line=147 source_end_line=147 source_column=23 source_end_column=61}
+  ROOT %pad_add_fusion = u32[2]{0:T(128)} fusion(%bitcast.1, %bitcast), kind=kLoop, calls=%fused_computation, metadata={op_name="jit(_threefry_seed)/concatenate" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/runner/tpu_jax_runner.py" source_line=147 source_end_line=147 source_column=23 source_end_column=61}, backend_config={"flag_configs":[],"window_config":{"kernel_window_bounds":[],"output_window_bounds":["1"],"input_window_bounds":[],"estimated_cycles":"2121","iteration_bounds":["1"],"cost_model_type":"COST_MODEL_TYPE_INVALID","ml_estimated_microseconds":0,"is_mask":false},"scoped_memory_configs":[],"used_scoped_memory_configs":[{"memory_space":"1","offset":"0","size":"1024"}],"retry_config":{"retry_count":"0"}}
+}
+

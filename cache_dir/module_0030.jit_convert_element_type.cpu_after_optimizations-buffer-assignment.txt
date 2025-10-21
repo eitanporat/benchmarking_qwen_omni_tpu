@@ -1,0 +1,36 @@
+BufferAssignment:
+allocation 0: size 13824, parameter 0, shape |f32[3456]| at ShapeIndex {}:
+ value: <0 args_0_.1 @0> (size=13824,offset=0): f32[3456]{0}
+allocation 1: size 6912, output shape is |bf16[3456]|, maybe-live-out:
+ value: <1 convert_element_type.1 @0> (size=6912,offset=0): bf16[3456]{0}
+
+Total bytes used: 20736 (20.2KiB)
+
+Used values:
+<0 args_0_.1 @0>
+ positions:
+  args_0_.1
+ uses:
+  convert_element_type.1, operand 0
+ from instruction: %args_0_.1 = f32[3456]{0} parameter(0), metadata={op_name="args[0]"}
+<1 convert_element_type.1 @0>
+ positions:
+  convert_element_type.1
+ uses:
+ from instruction: %convert_element_type.1 = bf16[3456]{0} convert(%args_0_.1), metadata={op_name="jit(convert_element_type)/convert_element_type" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/torchax/ops/mappings.py" source_line=46 source_end_line=46 source_column=12 source_end_column=57}
+
+
+HloLiveRange (max 2):
+  InstructionSequence:
+    0:args_0_.1
+    1:convert_element_type.1
+  BufferLiveRange:
+    args_0_.1{}:0-2
+    convert_element_type.1{}:1-2
+  Live ranges at 1 (peak):
+    args_0_.1{}: 13824 bytes (cumulative: 13824 bytes)
+    convert_element_type.1{}: 6912 bytes (cumulative: 20736 bytes)
+  Stack trace breakdown for peak usage: 20 736 bytes
+    main.1 (100.0%, total: 20 736 bytes, current: 0 bytes, remaining: 20 736 bytes)
+      ├── args[0] (66.7%, total: 13 824 bytes, current: 13 824 bytes, remaining: 6 912 bytes)
+      └── jit(convert_element_type)/convert_element_type (33.3%, total: 6 912 bytes, current: 6 912 bytes, remaining: 0 bytes)

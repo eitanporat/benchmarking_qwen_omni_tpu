@@ -1,0 +1,1506 @@
+BufferAssignment:
+allocation 0: size 512, constant:
+ value: <153 constant.32 @0> (size=512,offset=0): u32[1]{0:T(128)}
+allocation 1: size 512, output shape is |u32[2]|, maybe-live-out:
+ value: <11 copy @0> (size=512,offset=0): u32[]{:T(128)}
+ value: <156 pad_add_fusion @0> (size=512,offset=0): u32[2]{0:T(128)}
+allocation 2: size 512, parameter 1, shape |u32[]| at ShapeIndex {}:
+ value: <10 data.2 @0> (size=512,offset=0): u32[]{:T(128)}
+allocation 3: size 512, constant:
+ value: <12 constant.3 @0> (size=512,offset=0): u32[]{:T(128)}
+allocation 4: size 512, parameter 0, shape |u32[2]| at ShapeIndex {}:
+ value: <14 key.1 @0> (size=512,offset=0): u32[2]{0:T(128)}
+allocation 5: size 512, constant:
+ value: <24 constant.0 @0> (size=512,offset=0): u32[1]{0:T(128)}
+allocation 6: size 512, constant:
+ value: <26 constant.1 @0> (size=512,offset=0): u32[1]{0:T(128)}
+allocation 7: size 512, constant:
+ value: <31 constant.2 @0> (size=512,offset=0): u32[1]{0:T(128)}
+allocation 8: size 512, constant:
+ value: <33 constant.4 @0> (size=512,offset=0): u32[1]{0:T(128)}
+allocation 9: size 512, constant:
+ value: <38 constant.5 @0> (size=512,offset=0): u32[1]{0:T(128)}
+allocation 10: size 512, constant:
+ value: <40 constant.6 @0> (size=512,offset=0): u32[1]{0:T(128)}
+allocation 11: size 512, constant:
+ value: <51 constant.33 @0> (size=512,offset=0): u32[1]{0:T(128)}
+allocation 12: size 512, constant:
+ value: <54 constant.8 @0> (size=512,offset=0): u32[1]{0:T(128)}
+allocation 13: size 512, constant:
+ value: <62 constant.9 @0> (size=512,offset=0): u32[1]{0:T(128)}
+allocation 14: size 512, constant:
+ value: <64 constant.10 @0> (size=512,offset=0): u32[1]{0:T(128)}
+allocation 15: size 512, constant:
+ value: <69 constant.11 @0> (size=512,offset=0): u32[1]{0:T(128)}
+allocation 16: size 512, constant:
+ value: <76 constant.12 @0> (size=512,offset=0): u32[1]{0:T(128)}
+allocation 17: size 512, constant:
+ value: <78 constant.13 @0> (size=512,offset=0): u32[1]{0:T(128)}
+allocation 18: size 512, constant:
+ value: <83 constant.14 @0> (size=512,offset=0): u32[1]{0:T(128)}
+allocation 19: size 512, constant:
+ value: <130 constant.31 @0> (size=512,offset=0): u32[1]{0:T(128)}
+allocation 20: size 512, color 1, preallocated-temp:
+ value: <16 copy-start{0} @1> (size=512,offset=0): u32[2]{0:T(128)S(1)}
+allocation 21: size 66048, preallocated-temp:
+ value: <13 shift_right_logical.4 @0> (size=512,offset=32768): u32[]{:T(128)}
+ value: <15 copy-start{} @0> (size=32,offset=0): (u32[2]{0:T(128)S(1)}, u32[2]{0:T(128)}, u32[]{:S(2)})
+ value: <18 fusion{} @0> (size=32,offset=16384): (u32[1]{0:T(128)}, u32[1]{0:T(128)})
+ value: <19 fusion{0} @0> (size=512,offset=49152): u32[1]{0:T(128)}
+ value: <20 fusion{1} @0> (size=512,offset=65536): u32[1]{0:T(128)}
+allocation 22: size 4, color 2, preallocated-temp:
+ value: <17 copy-start{2} @2> (size=4,offset=0): u32[]{:S(2)}
+allocation 23: size 2560, color 6, preallocated-temp:
+ value: <21 add.1 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <22 add.3 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <23 add.4 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <25 shift_left.0 @6> (size=512,offset=1536): u32[1]{0:T(128)S(6)}
+ value: <27 shift_right_logical.0 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <28 or.0 @6> (size=512,offset=1536): u32[1]{0:T(128)S(6)}
+ value: <29 xor.0 @6> (size=512,offset=1536): u32[1]{0:T(128)S(6)}
+ value: <30 add.5 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <32 shift_left.1 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <34 shift_right_logical.1 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <35 or.1 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <36 xor.1 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <37 add.6 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <39 shift_left.2 @6> (size=512,offset=1536): u32[1]{0:T(128)S(6)}
+ value: <41 shift_right_logical.2 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <42 or.2 @6> (size=512,offset=1536): u32[1]{0:T(128)S(6)}
+ value: <43 xor.2 @6> (size=512,offset=1536): u32[1]{0:T(128)S(6)}
+ value: <44 add.7 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <45 add.9 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <46 shift_left.3 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <47 shift_right_logical.3 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <48 or.3 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <49 xor.3 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <50 xor.22 @6> (size=512,offset=1536): u32[1]{0:T(128)S(6)}
+ value: <52 xor.23 @6> (size=512,offset=1536): u32[1]{0:T(128)S(6)}
+ value: <53 add.11 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <55 add.12 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <56 add.13 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <57 shift_left.4 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <58 shift_right_logical.5 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <59 or.4 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <60 xor.6 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <61 add.14 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <63 shift_left.5 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <65 shift_right_logical.6 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <66 or.5 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <67 xor.7 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <68 add.15 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <70 shift_left.6 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <71 shift_right_logical.7 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <72 or.6 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <73 xor.8 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <74 add.16 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <75 add.18 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <77 shift_left.7 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <79 shift_right_logical.8 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <80 or.7 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <81 xor.9 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <82 add.20 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <84 add.21 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <85 add.22 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <86 shift_left.8 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <87 shift_right_logical.9 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <88 or.8 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <89 xor.10 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <90 add.23 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <91 shift_left.9 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <92 shift_right_logical.10 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <93 or.9 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <94 xor.11 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <95 add.24 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <96 shift_left.10 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <97 shift_right_logical.11 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <98 or.10 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <99 xor.12 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <100 add.25 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <101 add.27 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <102 shift_left.11 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <103 shift_right_logical.12 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <104 or.11 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <105 xor.13 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <106 add.29 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <107 add.30 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <108 add.31 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <109 shift_left.12 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <110 shift_right_logical.13 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <111 or.12 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <112 xor.14 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <113 add.32 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <114 shift_left.13 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <115 shift_right_logical.14 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <116 or.13 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <117 xor.15 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <118 add.38 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <119 shift_left.14 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <120 shift_right_logical.15 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <121 or.14 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <122 xor.16 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <123 add.39 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <124 add.41 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <125 shift_left.15 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <126 shift_right_logical.16 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <127 or.15 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <128 xor.17 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <129 add.44 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <131 add.45 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <132 add.46 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <133 shift_left.16 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <134 shift_right_logical.17 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <135 or.16 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <136 xor.18 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <137 add.48 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <138 shift_left.17 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <139 shift_right_logical.18 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <140 or.17 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <141 xor.19 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <142 add.49 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <143 shift_left.18 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <144 shift_right_logical.19 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <145 or.18 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <146 xor.20 @6> (size=512,offset=2048): u32[1]{0:T(128)S(6)}
+ value: <147 add.50 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+ value: <148 shift_left.19 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <149 shift_right_logical.20 @6> (size=512,offset=0): u32[1]{0:T(128)S(6)}
+ value: <150 or.19 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <151 xor.21 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <152 add.55 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <154 add.56 @6> (size=512,offset=1024): u32[1]{0:T(128)S(6)}
+ value: <155 add.53 @6> (size=512,offset=512): u32[1]{0:T(128)S(6)}
+
+Total bytes used: 79364 (77.5KiB)
+
+Used values:
+<10 data.2 @0>
+ positions:
+  data.2
+ uses:
+  copy, operand 0
+ from instruction: %data.2 = u32[]{:T(128)} parameter(1), metadata={op_name="data"}
+<11 copy @0>
+ positions:
+  copy
+  bitcast.2
+ uses:
+  shift_right_logical.4, operand 0
+  bitcast.2, operand 0
+  add.3, operand 0
+ from instruction: %copy = u32[]{:T(128)} copy(%data.2)
+<12 constant.3 @0>
+ positions:
+  constant.3
+ uses:
+  shift_right_logical.4, operand 1
+ from instruction: %constant.3 = u32[]{:T(128)} constant(32)
+<13 shift_right_logical.4 @0>
+ positions:
+  shift_right_logical.4
+  bitcast
+ uses:
+  bitcast, operand 0
+  add.1, operand 0
+ from instruction: %shift_right_logical.4 = u32[]{:T(128)} shift-right-logical(%copy, %constant.3), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<14 key.1 @0>
+ positions:
+  key.1
+  copy-start {1}
+ uses:
+  copy-start, operand 0
+  copy-done, operand 0 {1}
+ from instruction: %key.1 = u32[2]{0:T(128)} parameter(0), metadata={op_name="key"}
+<15 copy-start{} @0>
+ positions:
+  copy-start {}
+ uses:
+  copy-done, operand 0 {}
+ from instruction: %copy-start = (u32[2]{0:T(128)S(1)}, u32[2]{0:T(128)}, u32[]{:S(2)}) copy-start(%key.1)
+<16 copy-start{0} @1>
+ positions:
+  copy-start {0}
+  copy-done
+ uses:
+  copy-done, operand 0 {0}
+  fusion, operand 0
+ from instruction: %copy-start = (u32[2]{0:T(128)S(1)}, u32[2]{0:T(128)}, u32[]{:S(2)}) copy-start(%key.1)
+<17 copy-start{2} @2>
+ positions:
+  copy-start {2}
+ uses:
+  copy-done, operand 0 {2}
+ from instruction: %copy-start = (u32[2]{0:T(128)S(1)}, u32[2]{0:T(128)}, u32[]{:S(2)}) copy-start(%key.1)
+<18 fusion{} @0>
+ positions:
+  fusion {}
+ uses:
+  get-tuple-element, operand 0 {}
+  get-tuple-element.1, operand 0 {}
+ from instruction: %fusion = (u32[1]{0:T(128)}, u32[1]{0:T(128)}) fusion(%copy-done), kind=kLoop, calls=%fused_computation.1, metadata={op_name="jit(_threefry_fold_in)/slice" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<19 fusion{0} @0>
+ positions:
+  fusion {0}
+  get-tuple-element
+ uses:
+  xor.22, operand 1
+  add.3, operand 1
+  add.9, operand 1
+  add.29, operand 1
+  add.41, operand 1
+ from instruction: %fusion = (u32[1]{0:T(128)}, u32[1]{0:T(128)}) fusion(%copy-done), kind=kLoop, calls=%fused_computation.1, metadata={op_name="jit(_threefry_fold_in)/slice" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<20 fusion{1} @0>
+ positions:
+  fusion {1}
+  get-tuple-element.1
+ uses:
+  xor.22, operand 0
+  add.1, operand 1
+  add.20, operand 1
+  add.27, operand 1
+  add.55, operand 1
+ from instruction: %fusion = (u32[1]{0:T(128)}, u32[1]{0:T(128)}) fusion(%copy-done), kind=kLoop, calls=%fused_computation.1, metadata={op_name="jit(_threefry_fold_in)/slice" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<21 add.1 @6>
+ positions:
+  add.1
+ uses:
+  add.4, operand 0
+ from instruction: %add.1 = u32[1]{0:T(128)S(6)} add(%bitcast, %get-tuple-element.1), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<22 add.3 @6>
+ positions:
+  add.3
+ uses:
+  add.4, operand 1
+  shift_left.0, operand 0
+  shift_right_logical.0, operand 0
+ from instruction: %add.3 = u32[1]{0:T(128)S(6)} add(%bitcast.2, %get-tuple-element), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<23 add.4 @6>
+ positions:
+  add.4
+ uses:
+  xor.0, operand 0
+  add.5, operand 0
+ from instruction: %add.4 = u32[1]{0:T(128)S(6)} add(%add.1, %add.3), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<24 constant.0 @0>
+ positions:
+  constant.0
+ uses:
+  shift_left.0, operand 1
+  shift_left.8, operand 1
+  shift_left.16, operand 1
+ from instruction: %constant.0 = u32[1]{0:T(128)} constant({13}), metadata={op_name="jit(_threefry_fold_in)"}
+<25 shift_left.0 @6>
+ positions:
+  shift_left.0
+ uses:
+  or.0, operand 0
+ from instruction: %shift_left.0 = u32[1]{0:T(128)S(6)} shift-left(%add.3, %constant.0), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<26 constant.1 @0>
+ positions:
+  constant.1
+ uses:
+  shift_right_logical.0, operand 1
+  shift_right_logical.9, operand 1
+  shift_right_logical.17, operand 1
+ from instruction: %constant.1 = u32[1]{0:T(128)} constant({19}), metadata={op_name="jit(_threefry_fold_in)"}
+<27 shift_right_logical.0 @6>
+ positions:
+  shift_right_logical.0
+ uses:
+  or.0, operand 1
+ from instruction: %shift_right_logical.0 = u32[1]{0:T(128)S(6)} shift-right-logical(%add.3, %constant.1), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<28 or.0 @6>
+ positions:
+  or.0
+ uses:
+  xor.0, operand 1
+ from instruction: %or.0 = u32[1]{0:T(128)S(6)} or(%shift_left.0, %shift_right_logical.0), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<29 xor.0 @6>
+ positions:
+  xor.0
+ uses:
+  add.5, operand 1
+  shift_left.1, operand 0
+  shift_right_logical.1, operand 0
+ from instruction: %xor.0 = u32[1]{0:T(128)S(6)} xor(%add.4, %or.0), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<30 add.5 @6>
+ positions:
+  add.5
+ uses:
+  xor.1, operand 0
+  add.6, operand 0
+ from instruction: %add.5 = u32[1]{0:T(128)S(6)} add(%add.4, %xor.0), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<31 constant.2 @0>
+ positions:
+  constant.2
+ uses:
+  shift_left.1, operand 1
+  shift_right_logical.5, operand 1
+  shift_left.9, operand 1
+  shift_right_logical.13, operand 1
+  shift_left.17, operand 1
+ from instruction: %constant.2 = u32[1]{0:T(128)} constant({15}), metadata={op_name="jit(_threefry_fold_in)"}
+<32 shift_left.1 @6>
+ positions:
+  shift_left.1
+ uses:
+  or.1, operand 0
+ from instruction: %shift_left.1 = u32[1]{0:T(128)S(6)} shift-left(%xor.0, %constant.2), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<33 constant.4 @0>
+ positions:
+  constant.4
+ uses:
+  shift_right_logical.1, operand 1
+  shift_left.4, operand 1
+  shift_right_logical.10, operand 1
+  shift_left.12, operand 1
+  shift_right_logical.18, operand 1
+ from instruction: %constant.4 = u32[1]{0:T(128)} constant({17}), metadata={op_name="jit(_threefry_fold_in)"}
+<34 shift_right_logical.1 @6>
+ positions:
+  shift_right_logical.1
+ uses:
+  or.1, operand 1
+ from instruction: %shift_right_logical.1 = u32[1]{0:T(128)S(6)} shift-right-logical(%xor.0, %constant.4), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<35 or.1 @6>
+ positions:
+  or.1
+ uses:
+  xor.1, operand 1
+ from instruction: %or.1 = u32[1]{0:T(128)S(6)} or(%shift_left.1, %shift_right_logical.1), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<36 xor.1 @6>
+ positions:
+  xor.1
+ uses:
+  add.6, operand 1
+  shift_left.2, operand 0
+  shift_right_logical.2, operand 0
+ from instruction: %xor.1 = u32[1]{0:T(128)S(6)} xor(%add.5, %or.1), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<37 add.6 @6>
+ positions:
+  add.6
+ uses:
+  xor.2, operand 0
+  add.7, operand 0
+ from instruction: %add.6 = u32[1]{0:T(128)S(6)} add(%add.5, %xor.1), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<38 constant.5 @0>
+ positions:
+  constant.5
+ uses:
+  shift_left.2, operand 1
+  shift_right_logical.3, operand 1
+  shift_left.10, operand 1
+  shift_right_logical.12, operand 1
+  shift_left.18, operand 1
+  shift_right_logical.20, operand 1
+ from instruction: %constant.5 = u32[1]{0:T(128)} constant({26}), metadata={op_name="jit(_threefry_fold_in)"}
+<39 shift_left.2 @6>
+ positions:
+  shift_left.2
+ uses:
+  or.2, operand 0
+ from instruction: %shift_left.2 = u32[1]{0:T(128)S(6)} shift-left(%xor.1, %constant.5), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<40 constant.6 @0>
+ positions:
+  constant.6
+ uses:
+  shift_right_logical.2, operand 1
+  shift_left.3, operand 1
+  shift_right_logical.11, operand 1
+  shift_left.11, operand 1
+  shift_right_logical.19, operand 1
+  shift_left.19, operand 1
+ from instruction: %constant.6 = u32[1]{0:T(128)} constant({6}), metadata={op_name="jit(_threefry_fold_in)"}
+<41 shift_right_logical.2 @6>
+ positions:
+  shift_right_logical.2
+ uses:
+  or.2, operand 1
+ from instruction: %shift_right_logical.2 = u32[1]{0:T(128)S(6)} shift-right-logical(%xor.1, %constant.6), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<42 or.2 @6>
+ positions:
+  or.2
+ uses:
+  xor.2, operand 1
+ from instruction: %or.2 = u32[1]{0:T(128)S(6)} or(%shift_left.2, %shift_right_logical.2), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<43 xor.2 @6>
+ positions:
+  xor.2
+ uses:
+  add.7, operand 1
+  shift_left.3, operand 0
+  shift_right_logical.3, operand 0
+ from instruction: %xor.2 = u32[1]{0:T(128)S(6)} xor(%add.6, %or.2), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<44 add.7 @6>
+ positions:
+  add.7
+ uses:
+  add.9, operand 0
+  xor.3, operand 0
+ from instruction: %add.7 = u32[1]{0:T(128)S(6)} add(%add.6, %xor.2), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<45 add.9 @6>
+ positions:
+  add.9
+ uses:
+  add.13, operand 0
+ from instruction: %add.9 = u32[1]{0:T(128)S(6)} add(%add.7, %get-tuple-element), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<46 shift_left.3 @6>
+ positions:
+  shift_left.3
+ uses:
+  or.3, operand 0
+ from instruction: %shift_left.3 = u32[1]{0:T(128)S(6)} shift-left(%xor.2, %constant.6), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<47 shift_right_logical.3 @6>
+ positions:
+  shift_right_logical.3
+ uses:
+  or.3, operand 1
+ from instruction: %shift_right_logical.3 = u32[1]{0:T(128)S(6)} shift-right-logical(%xor.2, %constant.5), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<48 or.3 @6>
+ positions:
+  or.3
+ uses:
+  xor.3, operand 1
+ from instruction: %or.3 = u32[1]{0:T(128)S(6)} or(%shift_left.3, %shift_right_logical.3), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<49 xor.3 @6>
+ positions:
+  xor.3
+ uses:
+  add.11, operand 0
+ from instruction: %xor.3 = u32[1]{0:T(128)S(6)} xor(%add.7, %or.3), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<50 xor.22 @6>
+ positions:
+  xor.22
+ uses:
+  xor.23, operand 0
+ from instruction: %xor.22 = u32[1]{0:T(128)S(6)} xor(%get-tuple-element.1, %get-tuple-element), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<51 constant.33 @0>
+ positions:
+  constant.33
+ uses:
+  xor.23, operand 1
+ from instruction: %constant.33 = u32[1]{0:T(128)} constant({466688986}), metadata={op_name="jit(_threefry_fold_in)"}
+<52 xor.23 @6>
+ positions:
+  xor.23
+ uses:
+  add.53, operand 1
+  add.11, operand 1
+  add.18, operand 1
+  add.44, operand 1
+ from instruction: %xor.23 = u32[1]{0:T(128)S(6)} xor(%xor.22, %constant.33), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<53 add.11 @6>
+ positions:
+  add.11
+ uses:
+  add.12, operand 0
+ from instruction: %add.11 = u32[1]{0:T(128)S(6)} add(%xor.3, %xor.23), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<54 constant.8 @0>
+ positions:
+  constant.8
+ uses:
+  add.12, operand 1
+ from instruction: %constant.8 = u32[1]{0:T(128)} constant({1}), metadata={op_name="jit(_threefry_fold_in)"}
+<55 add.12 @6>
+ positions:
+  add.12
+ uses:
+  add.13, operand 1
+  shift_left.4, operand 0
+  shift_right_logical.5, operand 0
+ from instruction: %add.12 = u32[1]{0:T(128)S(6)} add(%add.11, %constant.8), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<56 add.13 @6>
+ positions:
+  add.13
+ uses:
+  xor.6, operand 0
+  add.14, operand 0
+ from instruction: %add.13 = u32[1]{0:T(128)S(6)} add(%add.9, %add.12), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<57 shift_left.4 @6>
+ positions:
+  shift_left.4
+ uses:
+  or.4, operand 0
+ from instruction: %shift_left.4 = u32[1]{0:T(128)S(6)} shift-left(%add.12, %constant.4), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<58 shift_right_logical.5 @6>
+ positions:
+  shift_right_logical.5
+ uses:
+  or.4, operand 1
+ from instruction: %shift_right_logical.5 = u32[1]{0:T(128)S(6)} shift-right-logical(%add.12, %constant.2), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<59 or.4 @6>
+ positions:
+  or.4
+ uses:
+  xor.6, operand 1
+ from instruction: %or.4 = u32[1]{0:T(128)S(6)} or(%shift_left.4, %shift_right_logical.5), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<60 xor.6 @6>
+ positions:
+  xor.6
+ uses:
+  add.14, operand 1
+  shift_left.5, operand 0
+  shift_right_logical.6, operand 0
+ from instruction: %xor.6 = u32[1]{0:T(128)S(6)} xor(%add.13, %or.4), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<61 add.14 @6>
+ positions:
+  add.14
+ uses:
+  xor.7, operand 0
+  add.15, operand 0
+ from instruction: %add.14 = u32[1]{0:T(128)S(6)} add(%add.13, %xor.6), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<62 constant.9 @0>
+ positions:
+  constant.9
+ uses:
+  shift_left.5, operand 1
+  shift_left.13, operand 1
+ from instruction: %constant.9 = u32[1]{0:T(128)} constant({29}), metadata={op_name="jit(_threefry_fold_in)"}
+<63 shift_left.5 @6>
+ positions:
+  shift_left.5
+ uses:
+  or.5, operand 0
+ from instruction: %shift_left.5 = u32[1]{0:T(128)S(6)} shift-left(%xor.6, %constant.9), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<64 constant.10 @0>
+ positions:
+  constant.10
+ uses:
+  shift_right_logical.6, operand 1
+  add.30, operand 1
+  shift_right_logical.14, operand 1
+ from instruction: %constant.10 = u32[1]{0:T(128)} constant({3}), metadata={op_name="jit(_threefry_fold_in)"}
+<65 shift_right_logical.6 @6>
+ positions:
+  shift_right_logical.6
+ uses:
+  or.5, operand 1
+ from instruction: %shift_right_logical.6 = u32[1]{0:T(128)S(6)} shift-right-logical(%xor.6, %constant.10), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<66 or.5 @6>
+ positions:
+  or.5
+ uses:
+  xor.7, operand 1
+ from instruction: %or.5 = u32[1]{0:T(128)S(6)} or(%shift_left.5, %shift_right_logical.6), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<67 xor.7 @6>
+ positions:
+  xor.7
+ uses:
+  add.15, operand 1
+  shift_left.6, operand 0
+  shift_right_logical.7, operand 0
+ from instruction: %xor.7 = u32[1]{0:T(128)S(6)} xor(%add.14, %or.5), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<68 add.15 @6>
+ positions:
+  add.15
+ uses:
+  xor.8, operand 0
+  add.16, operand 0
+ from instruction: %add.15 = u32[1]{0:T(128)S(6)} add(%add.14, %xor.7), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<69 constant.11 @0>
+ positions:
+  constant.11
+ uses:
+  shift_left.6, operand 1
+  shift_right_logical.7, operand 1
+  shift_left.14, operand 1
+  shift_right_logical.15, operand 1
+ from instruction: %constant.11 = u32[1]{0:T(128)} constant({16}), metadata={op_name="jit(_threefry_fold_in)"}
+<70 shift_left.6 @6>
+ positions:
+  shift_left.6
+ uses:
+  or.6, operand 0
+ from instruction: %shift_left.6 = u32[1]{0:T(128)S(6)} shift-left(%xor.7, %constant.11), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<71 shift_right_logical.7 @6>
+ positions:
+  shift_right_logical.7
+ uses:
+  or.6, operand 1
+ from instruction: %shift_right_logical.7 = u32[1]{0:T(128)S(6)} shift-right-logical(%xor.7, %constant.11), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<72 or.6 @6>
+ positions:
+  or.6
+ uses:
+  xor.8, operand 1
+ from instruction: %or.6 = u32[1]{0:T(128)S(6)} or(%shift_left.6, %shift_right_logical.7), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<73 xor.8 @6>
+ positions:
+  xor.8
+ uses:
+  add.16, operand 1
+  shift_left.7, operand 0
+  shift_right_logical.8, operand 0
+ from instruction: %xor.8 = u32[1]{0:T(128)S(6)} xor(%add.15, %or.6), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<74 add.16 @6>
+ positions:
+  add.16
+ uses:
+  add.18, operand 0
+  xor.9, operand 0
+ from instruction: %add.16 = u32[1]{0:T(128)S(6)} add(%add.15, %xor.8), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<75 add.18 @6>
+ positions:
+  add.18
+ uses:
+  add.22, operand 0
+ from instruction: %add.18 = u32[1]{0:T(128)S(6)} add(%add.16, %xor.23), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<76 constant.12 @0>
+ positions:
+  constant.12
+ uses:
+  shift_left.7, operand 1
+  shift_left.15, operand 1
+ from instruction: %constant.12 = u32[1]{0:T(128)} constant({24}), metadata={op_name="jit(_threefry_fold_in)"}
+<77 shift_left.7 @6>
+ positions:
+  shift_left.7
+ uses:
+  or.7, operand 0
+ from instruction: %shift_left.7 = u32[1]{0:T(128)S(6)} shift-left(%xor.8, %constant.12), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<78 constant.13 @0>
+ positions:
+  constant.13
+ uses:
+  shift_right_logical.8, operand 1
+  shift_right_logical.16, operand 1
+ from instruction: %constant.13 = u32[1]{0:T(128)} constant({8}), metadata={op_name="jit(_threefry_fold_in)"}
+<79 shift_right_logical.8 @6>
+ positions:
+  shift_right_logical.8
+ uses:
+  or.7, operand 1
+ from instruction: %shift_right_logical.8 = u32[1]{0:T(128)S(6)} shift-right-logical(%xor.8, %constant.13), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<80 or.7 @6>
+ positions:
+  or.7
+ uses:
+  xor.9, operand 1
+ from instruction: %or.7 = u32[1]{0:T(128)S(6)} or(%shift_left.7, %shift_right_logical.8), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<81 xor.9 @6>
+ positions:
+  xor.9
+ uses:
+  add.20, operand 0
+ from instruction: %xor.9 = u32[1]{0:T(128)S(6)} xor(%add.16, %or.7), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<82 add.20 @6>
+ positions:
+  add.20
+ uses:
+  add.21, operand 0
+ from instruction: %add.20 = u32[1]{0:T(128)S(6)} add(%xor.9, %get-tuple-element.1), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<83 constant.14 @0>
+ positions:
+  constant.14
+ uses:
+  add.21, operand 1
+ from instruction: %constant.14 = u32[1]{0:T(128)} constant({2}), metadata={op_name="jit(_threefry_fold_in)"}
+<84 add.21 @6>
+ positions:
+  add.21
+ uses:
+  add.22, operand 1
+  shift_left.8, operand 0
+  shift_right_logical.9, operand 0
+ from instruction: %add.21 = u32[1]{0:T(128)S(6)} add(%add.20, %constant.14), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<85 add.22 @6>
+ positions:
+  add.22
+ uses:
+  xor.10, operand 0
+  add.23, operand 0
+ from instruction: %add.22 = u32[1]{0:T(128)S(6)} add(%add.18, %add.21), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<86 shift_left.8 @6>
+ positions:
+  shift_left.8
+ uses:
+  or.8, operand 0
+ from instruction: %shift_left.8 = u32[1]{0:T(128)S(6)} shift-left(%add.21, %constant.0), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<87 shift_right_logical.9 @6>
+ positions:
+  shift_right_logical.9
+ uses:
+  or.8, operand 1
+ from instruction: %shift_right_logical.9 = u32[1]{0:T(128)S(6)} shift-right-logical(%add.21, %constant.1), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<88 or.8 @6>
+ positions:
+  or.8
+ uses:
+  xor.10, operand 1
+ from instruction: %or.8 = u32[1]{0:T(128)S(6)} or(%shift_left.8, %shift_right_logical.9), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<89 xor.10 @6>
+ positions:
+  xor.10
+ uses:
+  add.23, operand 1
+  shift_left.9, operand 0
+  shift_right_logical.10, operand 0
+ from instruction: %xor.10 = u32[1]{0:T(128)S(6)} xor(%add.22, %or.8), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<90 add.23 @6>
+ positions:
+  add.23
+ uses:
+  xor.11, operand 0
+  add.24, operand 0
+ from instruction: %add.23 = u32[1]{0:T(128)S(6)} add(%add.22, %xor.10), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<91 shift_left.9 @6>
+ positions:
+  shift_left.9
+ uses:
+  or.9, operand 0
+ from instruction: %shift_left.9 = u32[1]{0:T(128)S(6)} shift-left(%xor.10, %constant.2), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<92 shift_right_logical.10 @6>
+ positions:
+  shift_right_logical.10
+ uses:
+  or.9, operand 1
+ from instruction: %shift_right_logical.10 = u32[1]{0:T(128)S(6)} shift-right-logical(%xor.10, %constant.4), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<93 or.9 @6>
+ positions:
+  or.9
+ uses:
+  xor.11, operand 1
+ from instruction: %or.9 = u32[1]{0:T(128)S(6)} or(%shift_left.9, %shift_right_logical.10), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<94 xor.11 @6>
+ positions:
+  xor.11
+ uses:
+  add.24, operand 1
+  shift_left.10, operand 0
+  shift_right_logical.11, operand 0
+ from instruction: %xor.11 = u32[1]{0:T(128)S(6)} xor(%add.23, %or.9), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<95 add.24 @6>
+ positions:
+  add.24
+ uses:
+  xor.12, operand 0
+  add.25, operand 0
+ from instruction: %add.24 = u32[1]{0:T(128)S(6)} add(%add.23, %xor.11), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<96 shift_left.10 @6>
+ positions:
+  shift_left.10
+ uses:
+  or.10, operand 0
+ from instruction: %shift_left.10 = u32[1]{0:T(128)S(6)} shift-left(%xor.11, %constant.5), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<97 shift_right_logical.11 @6>
+ positions:
+  shift_right_logical.11
+ uses:
+  or.10, operand 1
+ from instruction: %shift_right_logical.11 = u32[1]{0:T(128)S(6)} shift-right-logical(%xor.11, %constant.6), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<98 or.10 @6>
+ positions:
+  or.10
+ uses:
+  xor.12, operand 1
+ from instruction: %or.10 = u32[1]{0:T(128)S(6)} or(%shift_left.10, %shift_right_logical.11), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<99 xor.12 @6>
+ positions:
+  xor.12
+ uses:
+  add.25, operand 1
+  shift_left.11, operand 0
+  shift_right_logical.12, operand 0
+ from instruction: %xor.12 = u32[1]{0:T(128)S(6)} xor(%add.24, %or.10), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<100 add.25 @6>
+ positions:
+  add.25
+ uses:
+  add.27, operand 0
+  xor.13, operand 0
+ from instruction: %add.25 = u32[1]{0:T(128)S(6)} add(%add.24, %xor.12), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<101 add.27 @6>
+ positions:
+  add.27
+ uses:
+  add.31, operand 0
+ from instruction: %add.27 = u32[1]{0:T(128)S(6)} add(%add.25, %get-tuple-element.1), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<102 shift_left.11 @6>
+ positions:
+  shift_left.11
+ uses:
+  or.11, operand 0
+ from instruction: %shift_left.11 = u32[1]{0:T(128)S(6)} shift-left(%xor.12, %constant.6), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<103 shift_right_logical.12 @6>
+ positions:
+  shift_right_logical.12
+ uses:
+  or.11, operand 1
+ from instruction: %shift_right_logical.12 = u32[1]{0:T(128)S(6)} shift-right-logical(%xor.12, %constant.5), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<104 or.11 @6>
+ positions:
+  or.11
+ uses:
+  xor.13, operand 1
+ from instruction: %or.11 = u32[1]{0:T(128)S(6)} or(%shift_left.11, %shift_right_logical.12), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<105 xor.13 @6>
+ positions:
+  xor.13
+ uses:
+  add.29, operand 0
+ from instruction: %xor.13 = u32[1]{0:T(128)S(6)} xor(%add.25, %or.11), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<106 add.29 @6>
+ positions:
+  add.29
+ uses:
+  add.30, operand 0
+ from instruction: %add.29 = u32[1]{0:T(128)S(6)} add(%xor.13, %get-tuple-element), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<107 add.30 @6>
+ positions:
+  add.30
+ uses:
+  add.31, operand 1
+  shift_left.12, operand 0
+  shift_right_logical.13, operand 0
+ from instruction: %add.30 = u32[1]{0:T(128)S(6)} add(%add.29, %constant.10), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<108 add.31 @6>
+ positions:
+  add.31
+ uses:
+  xor.14, operand 0
+  add.32, operand 0
+ from instruction: %add.31 = u32[1]{0:T(128)S(6)} add(%add.27, %add.30), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<109 shift_left.12 @6>
+ positions:
+  shift_left.12
+ uses:
+  or.12, operand 0
+ from instruction: %shift_left.12 = u32[1]{0:T(128)S(6)} shift-left(%add.30, %constant.4), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<110 shift_right_logical.13 @6>
+ positions:
+  shift_right_logical.13
+ uses:
+  or.12, operand 1
+ from instruction: %shift_right_logical.13 = u32[1]{0:T(128)S(6)} shift-right-logical(%add.30, %constant.2), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<111 or.12 @6>
+ positions:
+  or.12
+ uses:
+  xor.14, operand 1
+ from instruction: %or.12 = u32[1]{0:T(128)S(6)} or(%shift_left.12, %shift_right_logical.13), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<112 xor.14 @6>
+ positions:
+  xor.14
+ uses:
+  add.32, operand 1
+  shift_left.13, operand 0
+  shift_right_logical.14, operand 0
+ from instruction: %xor.14 = u32[1]{0:T(128)S(6)} xor(%add.31, %or.12), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<113 add.32 @6>
+ positions:
+  add.32
+ uses:
+  xor.15, operand 0
+  add.38, operand 0
+ from instruction: %add.32 = u32[1]{0:T(128)S(6)} add(%add.31, %xor.14), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<114 shift_left.13 @6>
+ positions:
+  shift_left.13
+ uses:
+  or.13, operand 0
+ from instruction: %shift_left.13 = u32[1]{0:T(128)S(6)} shift-left(%xor.14, %constant.9), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<115 shift_right_logical.14 @6>
+ positions:
+  shift_right_logical.14
+ uses:
+  or.13, operand 1
+ from instruction: %shift_right_logical.14 = u32[1]{0:T(128)S(6)} shift-right-logical(%xor.14, %constant.10), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<116 or.13 @6>
+ positions:
+  or.13
+ uses:
+  xor.15, operand 1
+ from instruction: %or.13 = u32[1]{0:T(128)S(6)} or(%shift_left.13, %shift_right_logical.14), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<117 xor.15 @6>
+ positions:
+  xor.15
+ uses:
+  add.38, operand 1
+  shift_left.14, operand 0
+  shift_right_logical.15, operand 0
+ from instruction: %xor.15 = u32[1]{0:T(128)S(6)} xor(%add.32, %or.13), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<118 add.38 @6>
+ positions:
+  add.38
+ uses:
+  xor.16, operand 0
+  add.39, operand 0
+ from instruction: %add.38 = u32[1]{0:T(128)S(6)} add(%add.32, %xor.15), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<119 shift_left.14 @6>
+ positions:
+  shift_left.14
+ uses:
+  or.14, operand 0
+ from instruction: %shift_left.14 = u32[1]{0:T(128)S(6)} shift-left(%xor.15, %constant.11), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<120 shift_right_logical.15 @6>
+ positions:
+  shift_right_logical.15
+ uses:
+  or.14, operand 1
+ from instruction: %shift_right_logical.15 = u32[1]{0:T(128)S(6)} shift-right-logical(%xor.15, %constant.11), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<121 or.14 @6>
+ positions:
+  or.14
+ uses:
+  xor.16, operand 1
+ from instruction: %or.14 = u32[1]{0:T(128)S(6)} or(%shift_left.14, %shift_right_logical.15), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<122 xor.16 @6>
+ positions:
+  xor.16
+ uses:
+  add.39, operand 1
+  shift_left.15, operand 0
+  shift_right_logical.16, operand 0
+ from instruction: %xor.16 = u32[1]{0:T(128)S(6)} xor(%add.38, %or.14), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<123 add.39 @6>
+ positions:
+  add.39
+ uses:
+  add.41, operand 0
+  xor.17, operand 0
+ from instruction: %add.39 = u32[1]{0:T(128)S(6)} add(%add.38, %xor.16), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<124 add.41 @6>
+ positions:
+  add.41
+ uses:
+  add.46, operand 0
+ from instruction: %add.41 = u32[1]{0:T(128)S(6)} add(%add.39, %get-tuple-element), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<125 shift_left.15 @6>
+ positions:
+  shift_left.15
+ uses:
+  or.15, operand 0
+ from instruction: %shift_left.15 = u32[1]{0:T(128)S(6)} shift-left(%xor.16, %constant.12), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<126 shift_right_logical.16 @6>
+ positions:
+  shift_right_logical.16
+ uses:
+  or.15, operand 1
+ from instruction: %shift_right_logical.16 = u32[1]{0:T(128)S(6)} shift-right-logical(%xor.16, %constant.13), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<127 or.15 @6>
+ positions:
+  or.15
+ uses:
+  xor.17, operand 1
+ from instruction: %or.15 = u32[1]{0:T(128)S(6)} or(%shift_left.15, %shift_right_logical.16), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<128 xor.17 @6>
+ positions:
+  xor.17
+ uses:
+  add.44, operand 0
+ from instruction: %xor.17 = u32[1]{0:T(128)S(6)} xor(%add.39, %or.15), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<129 add.44 @6>
+ positions:
+  add.44
+ uses:
+  add.45, operand 0
+ from instruction: %add.44 = u32[1]{0:T(128)S(6)} add(%xor.17, %xor.23), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<130 constant.31 @0>
+ positions:
+  constant.31
+ uses:
+  add.45, operand 1
+ from instruction: %constant.31 = u32[1]{0:T(128)} constant({4}), metadata={op_name="jit(_threefry_fold_in)"}
+<131 add.45 @6>
+ positions:
+  add.45
+ uses:
+  add.46, operand 1
+  shift_left.16, operand 0
+  shift_right_logical.17, operand 0
+ from instruction: %add.45 = u32[1]{0:T(128)S(6)} add(%add.44, %constant.31), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<132 add.46 @6>
+ positions:
+  add.46
+ uses:
+  xor.18, operand 0
+  add.48, operand 0
+ from instruction: %add.46 = u32[1]{0:T(128)S(6)} add(%add.41, %add.45), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<133 shift_left.16 @6>
+ positions:
+  shift_left.16
+ uses:
+  or.16, operand 0
+ from instruction: %shift_left.16 = u32[1]{0:T(128)S(6)} shift-left(%add.45, %constant.0), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<134 shift_right_logical.17 @6>
+ positions:
+  shift_right_logical.17
+ uses:
+  or.16, operand 1
+ from instruction: %shift_right_logical.17 = u32[1]{0:T(128)S(6)} shift-right-logical(%add.45, %constant.1), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<135 or.16 @6>
+ positions:
+  or.16
+ uses:
+  xor.18, operand 1
+ from instruction: %or.16 = u32[1]{0:T(128)S(6)} or(%shift_left.16, %shift_right_logical.17), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<136 xor.18 @6>
+ positions:
+  xor.18
+ uses:
+  add.48, operand 1
+  shift_left.17, operand 0
+  shift_right_logical.18, operand 0
+ from instruction: %xor.18 = u32[1]{0:T(128)S(6)} xor(%add.46, %or.16), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<137 add.48 @6>
+ positions:
+  add.48
+ uses:
+  xor.19, operand 0
+  add.49, operand 0
+ from instruction: %add.48 = u32[1]{0:T(128)S(6)} add(%add.46, %xor.18), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<138 shift_left.17 @6>
+ positions:
+  shift_left.17
+ uses:
+  or.17, operand 0
+ from instruction: %shift_left.17 = u32[1]{0:T(128)S(6)} shift-left(%xor.18, %constant.2), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<139 shift_right_logical.18 @6>
+ positions:
+  shift_right_logical.18
+ uses:
+  or.17, operand 1
+ from instruction: %shift_right_logical.18 = u32[1]{0:T(128)S(6)} shift-right-logical(%xor.18, %constant.4), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<140 or.17 @6>
+ positions:
+  or.17
+ uses:
+  xor.19, operand 1
+ from instruction: %or.17 = u32[1]{0:T(128)S(6)} or(%shift_left.17, %shift_right_logical.18), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<141 xor.19 @6>
+ positions:
+  xor.19
+ uses:
+  add.49, operand 1
+  shift_left.18, operand 0
+  shift_right_logical.19, operand 0
+ from instruction: %xor.19 = u32[1]{0:T(128)S(6)} xor(%add.48, %or.17), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<142 add.49 @6>
+ positions:
+  add.49
+ uses:
+  xor.20, operand 0
+  add.50, operand 0
+ from instruction: %add.49 = u32[1]{0:T(128)S(6)} add(%add.48, %xor.19), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<143 shift_left.18 @6>
+ positions:
+  shift_left.18
+ uses:
+  or.18, operand 0
+ from instruction: %shift_left.18 = u32[1]{0:T(128)S(6)} shift-left(%xor.19, %constant.5), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<144 shift_right_logical.19 @6>
+ positions:
+  shift_right_logical.19
+ uses:
+  or.18, operand 1
+ from instruction: %shift_right_logical.19 = u32[1]{0:T(128)S(6)} shift-right-logical(%xor.19, %constant.6), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<145 or.18 @6>
+ positions:
+  or.18
+ uses:
+  xor.20, operand 1
+ from instruction: %or.18 = u32[1]{0:T(128)S(6)} or(%shift_left.18, %shift_right_logical.19), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<146 xor.20 @6>
+ positions:
+  xor.20
+ uses:
+  add.50, operand 1
+  shift_left.19, operand 0
+  shift_right_logical.20, operand 0
+ from instruction: %xor.20 = u32[1]{0:T(128)S(6)} xor(%add.49, %or.18), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<147 add.50 @6>
+ positions:
+  add.50
+ uses:
+  add.53, operand 0
+  xor.21, operand 0
+ from instruction: %add.50 = u32[1]{0:T(128)S(6)} add(%add.49, %xor.20), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<148 shift_left.19 @6>
+ positions:
+  shift_left.19
+ uses:
+  or.19, operand 0
+ from instruction: %shift_left.19 = u32[1]{0:T(128)S(6)} shift-left(%xor.20, %constant.6), metadata={op_name="jit(_threefry_fold_in)/shift_left" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<149 shift_right_logical.20 @6>
+ positions:
+  shift_right_logical.20
+ uses:
+  or.19, operand 1
+ from instruction: %shift_right_logical.20 = u32[1]{0:T(128)S(6)} shift-right-logical(%xor.20, %constant.5), metadata={op_name="jit(_threefry_fold_in)/shift_right_logical" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<150 or.19 @6>
+ positions:
+  or.19
+ uses:
+  xor.21, operand 1
+ from instruction: %or.19 = u32[1]{0:T(128)S(6)} or(%shift_left.19, %shift_right_logical.20), metadata={op_name="jit(_threefry_fold_in)/or" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<151 xor.21 @6>
+ positions:
+  xor.21
+ uses:
+  add.55, operand 0
+ from instruction: %xor.21 = u32[1]{0:T(128)S(6)} xor(%add.50, %or.19), metadata={op_name="jit(_threefry_fold_in)/xor" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<152 add.55 @6>
+ positions:
+  add.55
+ uses:
+  add.56, operand 0
+ from instruction: %add.55 = u32[1]{0:T(128)S(6)} add(%xor.21, %get-tuple-element.1), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<153 constant.32 @0>
+ positions:
+  constant.32
+ uses:
+  add.56, operand 1
+ from instruction: %constant.32 = u32[1]{0:T(128)} constant({5}), metadata={op_name="jit(_threefry_fold_in)"}
+<154 add.56 @6>
+ positions:
+  add.56
+ uses:
+  pad_add_fusion, operand 0
+ from instruction: %add.56 = u32[1]{0:T(128)S(6)} add(%add.55, %constant.32), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<155 add.53 @6>
+ positions:
+  add.53
+ uses:
+  pad_add_fusion, operand 1
+ from instruction: %add.53 = u32[1]{0:T(128)S(6)} add(%add.50, %xor.23), metadata={op_name="jit(_threefry_fold_in)/add" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+<156 pad_add_fusion @0>
+ positions:
+  pad_add_fusion
+ uses:
+ from instruction: %pad_add_fusion = u32[2]{0:T(128)} fusion(%add.56, %add.53), kind=kLoop, calls=%fused_computation, metadata={op_name="jit(_threefry_fold_in)/concatenate" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/flax/nnx/rnglib.py" source_line=76 source_end_line=76 source_column=10 source_end_column=60}
+
+
+HloLiveRange (max 148):
+  InstructionSequence:
+    0:constant.3
+    1:constant.1
+    2:constant.0
+    3:constant.4
+    4:constant.2
+    5:constant.6
+    6:constant.5
+    7:constant.33
+    8:constant.8
+    9:constant.10
+    10:constant.9
+    11:constant.11
+    12:constant.13
+    13:constant.12
+    14:constant.14
+    15:constant.31
+    16:constant.32
+    17:data.2
+    18:key.1
+    19:copy
+    20:shift_right_logical.4
+    21:copy-start
+    22:copy-done
+    23:fusion
+    24:get-tuple-element.1
+    25:bitcast
+    26:add.1
+    27:get-tuple-element
+    28:bitcast.2
+    29:add.3
+    30:shift_right_logical.0
+    31:shift_left.0
+    32:or.0
+    33:add.4
+    34:xor.0
+    35:shift_right_logical.1
+    36:shift_left.1
+    37:or.1
+    38:add.5
+    39:xor.1
+    40:shift_right_logical.2
+    41:shift_left.2
+    42:or.2
+    43:add.6
+    44:xor.2
+    45:shift_right_logical.3
+    46:shift_left.3
+    47:or.3
+    48:add.7
+    49:xor.3
+    50:add.9
+    51:xor.22
+    52:xor.23
+    53:add.11
+    54:add.12
+    55:shift_right_logical.5
+    56:shift_left.4
+    57:or.4
+    58:add.13
+    59:xor.6
+    60:shift_right_logical.6
+    61:shift_left.5
+    62:or.5
+    63:add.14
+    64:xor.7
+    65:shift_right_logical.7
+    66:shift_left.6
+    67:or.6
+    68:add.15
+    69:xor.8
+    70:shift_right_logical.8
+    71:shift_left.7
+    72:or.7
+    73:add.16
+    74:xor.9
+    75:add.20
+    76:add.21
+    77:shift_right_logical.9
+    78:shift_left.8
+    79:or.8
+    80:add.18
+    81:add.22
+    82:xor.10
+    83:shift_right_logical.10
+    84:shift_left.9
+    85:or.9
+    86:add.23
+    87:xor.11
+    88:shift_right_logical.11
+    89:shift_left.10
+    90:or.10
+    91:add.24
+    92:xor.12
+    93:shift_right_logical.12
+    94:shift_left.11
+    95:or.11
+    96:add.25
+    97:xor.13
+    98:add.29
+    99:add.30
+    100:shift_right_logical.13
+    101:shift_left.12
+    102:or.12
+    103:add.27
+    104:add.31
+    105:xor.14
+    106:shift_right_logical.14
+    107:shift_left.13
+    108:or.13
+    109:add.32
+    110:xor.15
+    111:shift_right_logical.15
+    112:shift_left.14
+    113:or.14
+    114:add.38
+    115:xor.16
+    116:shift_right_logical.16
+    117:shift_left.15
+    118:or.15
+    119:add.39
+    120:xor.17
+    121:add.44
+    122:add.45
+    123:shift_right_logical.17
+    124:shift_left.16
+    125:or.16
+    126:add.41
+    127:add.46
+    128:xor.18
+    129:shift_right_logical.18
+    130:shift_left.17
+    131:or.17
+    132:add.48
+    133:xor.19
+    134:shift_right_logical.19
+    135:shift_left.18
+    136:or.18
+    137:add.49
+    138:xor.20
+    139:shift_right_logical.20
+    140:shift_left.19
+    141:or.19
+    142:add.50
+    143:xor.21
+    144:add.55
+    145:add.56
+    146:add.53
+    147:pad_add_fusion
+  BufferLiveRange:
+    data.2{}:0-148
+    copy{}:19-29
+    constant.3{}:0-20
+    shift_right_logical.4{}:20-26
+    key.1{}:0-148
+    copy-start{}:21-22
+    copy-start{0}:21-23
+    copy-start{2}:21-22
+    fusion{}:23-27
+    fusion{0}:23-126
+    fusion{1}:23-144
+    add.1{}:26-33
+    add.3{}:29-33
+    add.4{}:33-38
+    constant.0{}:2-124
+    shift_left.0{}:31-32
+    constant.1{}:1-123
+    shift_right_logical.0{}:30-32
+    or.0{}:32-34
+    xor.0{}:34-38
+    add.5{}:38-43
+    constant.2{}:4-130
+    shift_left.1{}:36-37
+    constant.4{}:3-129
+    shift_right_logical.1{}:35-37
+    or.1{}:37-39
+    xor.1{}:39-43
+    add.6{}:43-48
+    constant.5{}:6-139
+    shift_left.2{}:41-42
+    constant.6{}:5-140
+    shift_right_logical.2{}:40-42
+    or.2{}:42-44
+    xor.2{}:44-48
+    add.7{}:48-50
+    add.9{}:50-58
+    shift_left.3{}:46-47
+    shift_right_logical.3{}:45-47
+    or.3{}:47-49
+    xor.3{}:49-53
+    xor.22{}:51-52
+    constant.33{}:7-52
+    xor.23{}:52-146
+    add.11{}:53-54
+    constant.8{}:8-54
+    add.12{}:54-58
+    add.13{}:58-63
+    shift_left.4{}:56-57
+    shift_right_logical.5{}:55-57
+    or.4{}:57-59
+    xor.6{}:59-63
+    add.14{}:63-68
+    constant.9{}:10-107
+    shift_left.5{}:61-62
+    constant.10{}:9-106
+    shift_right_logical.6{}:60-62
+    or.5{}:62-64
+    xor.7{}:64-68
+    add.15{}:68-73
+    constant.11{}:11-112
+    shift_left.6{}:66-67
+    shift_right_logical.7{}:65-67
+    or.6{}:67-69
+    xor.8{}:69-73
+    add.16{}:73-80
+    add.18{}:80-81
+    constant.12{}:13-117
+    shift_left.7{}:71-72
+    constant.13{}:12-116
+    shift_right_logical.8{}:70-72
+    or.7{}:72-74
+    xor.9{}:74-75
+    add.20{}:75-76
+    constant.14{}:14-76
+    add.21{}:76-81
+    add.22{}:81-86
+    shift_left.8{}:78-79
+    shift_right_logical.9{}:77-79
+    or.8{}:79-82
+    xor.10{}:82-86
+    add.23{}:86-91
+    shift_left.9{}:84-85
+    shift_right_logical.10{}:83-85
+    or.9{}:85-87
+    xor.11{}:87-91
+    add.24{}:91-96
+    shift_left.10{}:89-90
+    shift_right_logical.11{}:88-90
+    or.10{}:90-92
+    xor.12{}:92-96
+    add.25{}:96-103
+    add.27{}:103-104
+    shift_left.11{}:94-95
+    shift_right_logical.12{}:93-95
+    or.11{}:95-97
+    xor.13{}:97-98
+    add.29{}:98-99
+    add.30{}:99-104
+    add.31{}:104-109
+    shift_left.12{}:101-102
+    shift_right_logical.13{}:100-102
+    or.12{}:102-105
+    xor.14{}:105-109
+    add.32{}:109-114
+    shift_left.13{}:107-108
+    shift_right_logical.14{}:106-108
+    or.13{}:108-110
+    xor.15{}:110-114
+    add.38{}:114-119
+    shift_left.14{}:112-113
+    shift_right_logical.15{}:111-113
+    or.14{}:113-115
+    xor.16{}:115-119
+    add.39{}:119-126
+    add.41{}:126-127
+    shift_left.15{}:117-118
+    shift_right_logical.16{}:116-118
+    or.15{}:118-120
+    xor.17{}:120-121
+    add.44{}:121-122
+    constant.31{}:15-122
+    add.45{}:122-127
+    add.46{}:127-132
+    shift_left.16{}:124-125
+    shift_right_logical.17{}:123-125
+    or.16{}:125-128
+    xor.18{}:128-132
+    add.48{}:132-137
+    shift_left.17{}:130-131
+    shift_right_logical.18{}:129-131
+    or.17{}:131-133
+    xor.19{}:133-137
+    add.49{}:137-142
+    shift_left.18{}:135-136
+    shift_right_logical.19{}:134-136
+    or.18{}:136-138
+    xor.20{}:138-142
+    add.50{}:142-146
+    shift_left.19{}:140-141
+    shift_right_logical.20{}:139-141
+    or.19{}:141-143
+    xor.21{}:143-144
+    add.55{}:144-145
+    constant.32{}:16-145
+    add.56{}:145-147
+    add.53{}:146-147
+    pad_add_fusion{}:147-148
+  Live ranges at 23 (peak):
+    fusion{}: 16 bytes (cumulative: 16 bytes)
+    copy-start{0}: 8 bytes (cumulative: 24 bytes)
+    key.1{}: 8 bytes (cumulative: 32 bytes)
+    constant.0{}: 4 bytes (cumulative: 36 bytes)
+    constant.1{}: 4 bytes (cumulative: 40 bytes)
+    constant.10{}: 4 bytes (cumulative: 44 bytes)
+    constant.11{}: 4 bytes (cumulative: 48 bytes)
+    constant.12{}: 4 bytes (cumulative: 52 bytes)
+    constant.13{}: 4 bytes (cumulative: 56 bytes)
+    constant.14{}: 4 bytes (cumulative: 60 bytes)
+    constant.2{}: 4 bytes (cumulative: 64 bytes)
+    constant.31{}: 4 bytes (cumulative: 68 bytes)
+    constant.32{}: 4 bytes (cumulative: 72 bytes)
+    constant.33{}: 4 bytes (cumulative: 76 bytes)
+    constant.4{}: 4 bytes (cumulative: 80 bytes)
+    constant.5{}: 4 bytes (cumulative: 84 bytes)
+    constant.6{}: 4 bytes (cumulative: 88 bytes)
+    constant.8{}: 4 bytes (cumulative: 92 bytes)
+    constant.9{}: 4 bytes (cumulative: 96 bytes)
+    copy{}: 4 bytes (cumulative: 100 bytes)
+    data.2{}: 4 bytes (cumulative: 104 bytes)
+    fusion{0}: 4 bytes (cumulative: 108 bytes)
+    fusion{1}: 4 bytes (cumulative: 112 bytes)
+    shift_right_logical.4{}: 4 bytes (cumulative: 116 bytes)
+  Stack trace breakdown for peak usage: 116 bytes
+    main.168 (100.0%, total: 116 bytes, current: 0 bytes, remaining: 116 bytes)
+      ├── jit(_threefry_fold_in) (55.2%, total: 64 bytes, current: 64 bytes, remaining: 52 bytes)
+      ├── jit(_threefry_fold_in)/slice (13.8%, total: 16 bytes, current: 16 bytes, remaining: 36 bytes)
+      ├── copy-start{0} (6.9%, total: 8 bytes, current: 8 bytes, remaining: 28 bytes)
+      ├── key (6.9%, total: 8 bytes, current: 8 bytes, remaining: 20 bytes)
+      ├── copy (3.4%, total: 4 bytes, current: 4 bytes, remaining: 16 bytes)
+      ├── data (3.4%, total: 4 bytes, current: 4 bytes, remaining: 12 bytes)
+      ├── jit(_threefry_fold_in)/shift_right_logical (3.4%, total: 4 bytes, current: 4 bytes, remaining: 8 bytes)
+      ├── jit(_threefry_fold_in)/slice{0} (3.4%, total: 4 bytes, current: 4 bytes, remaining: 4 bytes)
+      └── jit(_threefry_fold_in)/slice{1} (3.4%, total: 4 bytes, current: 4 bytes, remaining: 0 bytes)

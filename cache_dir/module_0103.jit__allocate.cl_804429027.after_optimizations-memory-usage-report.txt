@@ -1,0 +1,19 @@
+Total bytes used: 242696704 (231.45MiB)
+
+Allocations sorted by size:
+
+cumulative_size; total_size - cumulative_size; allocation
+------------------------------------------------------------------------------
+ 231.45MiB(100%);       512B; allocation 1: size 231.45MiB, output shape is |bf16[14813,32,1,2,128]|, maybe-live-out:
+ 231.45MiB(100%);         0B; allocation 0: size 512B, constant:
+ 231.45MiB(100%);         0B; allocation 2: size 0B, color 1, preallocated-temp:
+
+
+Allocations sorted by size with their values:
+allocation 1: size 231.45MiB, output shape is |bf16[14813,32,1,2,128]|, maybe-live-out:
+allocation 0: size 512B, constant:
+allocation 2: size 0B, color 1, preallocated-temp:
+
+	cumulative_size;       size;       offset; used_by_n_values; shapes_list
+	------------------------------------------------------------
+

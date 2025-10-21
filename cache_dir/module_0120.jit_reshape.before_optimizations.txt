@@ -1,0 +1,7 @@
+HloModule jit_reshape, entry_computation_layout={(bf16[1,2048,4608]{2,1,0})->bf16[2048,4608]{1,0}}, allow_spmd_sharding_propagation_to_parameters={true}, allow_spmd_sharding_propagation_to_output={true}
+
+ENTRY %main.1 (args_0_.1: bf16[1,2048,4608]) -> bf16[2048,4608] {
+  %args_0_.1 = bf16[1,2048,4608]{2,1,0} parameter(0), metadata={op_name="args[0]"}
+  ROOT %reshape.1 = bf16[2048,4608]{1,0} reshape(%args_0_.1), metadata={op_name="jit(reshape)/reshape" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/layers/vllm/linear_common.py" source_line=72 source_end_line=72 source_column=11 source_end_column=46}
+}
+

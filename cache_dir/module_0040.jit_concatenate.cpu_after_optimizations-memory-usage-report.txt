@@ -1,0 +1,31 @@
+Total bytes used: 36864 (36.0KiB)
+
+Allocations sorted by size:
+
+cumulative_size; total_size - cumulative_size; allocation
+------------------------------------------------------------------------------
+   22.5KiB( 62%);    13.5KiB; allocation 4: size 22.5KiB, preallocated-temp:
+   29.2KiB( 81%);     6.8KiB; allocation 0: size 6.8KiB, output shape is |bf16[4,864]|, maybe-live-out:
+   31.5KiB( 88%);     4.5KiB; allocation 1: size 2.2KiB, parameter 0, shape |bf16[4,288]| at ShapeIndex {}:
+   33.8KiB( 94%);     2.2KiB; allocation 2: size 2.2KiB, parameter 1, shape |bf16[4,288]| at ShapeIndex {}:
+   36.0KiB(100%);         0B; allocation 3: size 2.2KiB, parameter 2, shape |bf16[4,288]| at ShapeIndex {}:
+
+
+Allocations sorted by size with their values:
+allocation 4: size 22.5KiB, preallocated-temp:
+
+	cumulative_size;       size;       offset; used_by_n_values; shapes_list
+	------------------------------------------------------------
+	  13.5KiB( 60%);    13.5KiB;            0;                1; f32[4,864]
+	  18.0KiB( 80%);     4.5KiB;        13824;                1; f32[4,288]
+	  22.5KiB(100%);     4.5KiB;        18432;                1; f32[4,288]
+
+allocation 0: size 6.8KiB, output shape is |bf16[4,864]|, maybe-live-out:
+
+	cumulative_size;       size;       offset; used_by_n_values; shapes_list
+	------------------------------------------------------------
+	   6.8KiB(100%);     6.8KiB;            0;                2; bf16[4,864], f32[4,288]
+
+allocation 1: size 2.2KiB, parameter 0, shape |bf16[4,288]| at ShapeIndex {}:
+allocation 2: size 2.2KiB, parameter 1, shape |bf16[4,288]| at ShapeIndex {}:
+allocation 3: size 2.2KiB, parameter 2, shape |bf16[4,288]| at ShapeIndex {}:

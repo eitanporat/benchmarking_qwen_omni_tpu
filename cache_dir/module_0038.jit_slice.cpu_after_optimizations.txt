@@ -1,0 +1,14 @@
+HloModule jit_slice, is_scheduled=true, entry_computation_layout={(bf16[3456]{0})->bf16[1152]{0}}, allow_spmd_sharding_propagation_to_parameters={true}, allow_spmd_sharding_propagation_to_output={true}
+
+%fused_computation (param_0.2: bf16[3456]) -> bf16[1152] {
+  %param_0.2 = bf16[3456]{0} parameter(0)
+  %convert.3 = f32[3456]{0} convert(%param_0.2)
+  %slice.0 = f32[1152]{0} slice(%convert.3), slice={[2304:3456]}, metadata={op_name="jit(slice)/slice" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/layers/vllm/linear_common.py" source_line=63 source_end_line=66 source_column=23 source_end_column=53}
+  ROOT %convert.2 = bf16[1152]{0} convert(%slice.0)
+}
+
+ENTRY %main.1 (args_0_.1: bf16[3456]) -> bf16[1152] {
+  %args_0_.1 = bf16[3456]{0} parameter(0), metadata={op_name="args[0]"}
+  ROOT %slice_convert_fusion = bf16[1152]{0} fusion(%args_0_.1), kind=kLoop, calls=%fused_computation
+}
+
