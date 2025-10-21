@@ -1,7 +1,0 @@
-HloModule jit_convert_element_type, entry_computation_layout={(f32[2048,4608]{1,0})->bf16[2048,4608]{1,0}}, allow_spmd_sharding_propagation_to_parameters={true}, allow_spmd_sharding_propagation_to_output={true}
-
-ENTRY %main.1 (args_0_.1: f32[2048,4608]) -> bf16[2048,4608] {
-  %args_0_.1 = f32[2048,4608]{1,0} parameter(0), metadata={op_name="args[0]"}
-  ROOT %convert_element_type.1 = bf16[2048,4608]{1,0} convert(%args_0_.1), metadata={op_name="jit(convert_element_type)/convert_element_type" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/torchax/ops/mappings.py" source_line=46 source_end_line=46 source_column=12 source_end_column=57}
-}
-

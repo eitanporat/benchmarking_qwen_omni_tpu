@@ -1,7 +1,0 @@
-HloModule jit_broadcast_in_dim, entry_computation_layout={(s32[]{:T(128)})->s32[257]{0:T(512)}}, allow_spmd_sharding_propagation_to_parameters={true}, allow_spmd_sharding_propagation_to_output={true}
-
-ENTRY %main.3 (args_0_.1: s32[]) -> s32[257] {
-  %args_0_.1 = s32[] parameter(0), metadata={op_name="args[0]"}
-  ROOT %broadcast_in_dim.2 = s32[257]{0} broadcast(%args_0_.1), dimensions={}, metadata={op_name="jit(broadcast_in_dim)/broadcast_in_dim" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/runner/compilation_manager.py" source_line=43 source_end_line=43 source_column=17 source_end_column=45}
-}
-

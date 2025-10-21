@@ -12,8 +12,8 @@ source .venv/bin/activate && ~/.local/bin/uv pip install vllm-tpu
 
 # Set environment variables
 export HF_HOME=/dev/shm
-export XLA_FLAGS="--xla_dump_to=/home/eporat/benchmarking_qwen_omni_tpu"
-export JAX_COMPILATION_CACHE_DIR=/home/eporat/benchmarking_qwen_omni_tpu
+export XLA_FLAGS="--xla_dump_to=/home/eporat/benchmarking_qwen_omni_tpu/cache_dir"
+export JAX_COMPILATION_CACHE_DIR=/home/eporat/benchmarking_qwen_omni_tpu/cache_dir
 export JAX_ENABLE_COMPILATION_CACHE=1
 export VLLM_XLA_CACHE_PATH="$JAX_COMPILATION_CACHE_DIR/.cache/jax_cache"
 export VLLM_USE_V1=1
@@ -44,8 +44,8 @@ export VLLM_XLA_CHECK_RECOMPILATION=1
 for rc_file in ~/.bashrc ~/.zshrc; do
   if [ -f "$rc_file" ]; then
     echo 'export HF_HOME=/dev/shm' >> "$rc_file"
-    echo 'export XLA_FLAGS="--xla_dump_to=/home/eporat/benchmarking_qwen_omni_tpu"' >> "$rc_file"
-    echo 'export JAX_COMPILATION_CACHE_DIR=/home/eporat/benchmarking_qwen_omni_tpu' >> "$rc_file"
+    echo 'export XLA_FLAGS="--xla_dump_to=/home/eporat/benchmarking_qwen_omni_tpu/cache_dir"' >> "$rc_file"
+    echo 'export JAX_COMPILATION_CACHE_DIR=/home/eporat/benchmarking_qwen_omni_tpu/cache_dir' >> "$rc_file"
     echo 'export JAX_ENABLE_COMPILATION_CACHE=1' >> "$rc_file"
     echo 'export VLLM_XLA_CACHE_PATH="$JAX_COMPILATION_CACHE_DIR/.cache/jax_cache"' >> "$rc_file"
     echo 'export VLLM_USE_V1=1' >> "$rc_file"

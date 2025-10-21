@@ -1,7 +1,0 @@
-HloModule jit__identity_fn, is_scheduled=true, entry_computation_layout={(bf16[128,2048,192]{1,2,0:T(8,128)(2,1)})->bf16[128,2048,192]{2,1,0:T(8,128)(2,1)}}, allow_spmd_sharding_propagation_to_parameters={true}, num_partitions=4
-
-ENTRY %main.4_spmd (param: bf16[128,2048,192]) -> bf16[128,2048,192] {
-  %param = bf16[128,2048,192]{1,2,0:T(8,128)(2,1)} parameter(0), sharding={devices=[1,1,4]<=[4]}, metadata={op_name="x"}
-  ROOT %copy = bf16[128,2048,192]{2,1,0:T(8,128)(2,1)} copy(%param), sharding={devices=[1,1,4]<=[4]}, metadata={op_name="x"}
-}
-

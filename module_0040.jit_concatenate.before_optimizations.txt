@@ -1,9 +1,0 @@
-HloModule jit_concatenate, entry_computation_layout={(bf16[4,288]{1,0}, bf16[4,288]{1,0}, bf16[4,288]{1,0})->bf16[4,864]{1,0}}, allow_spmd_sharding_propagation_to_parameters={true,true,true}, allow_spmd_sharding_propagation_to_output={true}
-
-ENTRY %main.1 (args_0_.1: bf16[4,288], args_1_.1: bf16[4,288], args_2_.1: bf16[4,288]) -> bf16[4,864] {
-  %args_0_.1 = bf16[4,288]{1,0} parameter(0), metadata={op_name="args[0]"}
-  %args_1_.1 = bf16[4,288]{1,0} parameter(1), metadata={op_name="args[1]"}
-  %args_2_.1 = bf16[4,288]{1,0} parameter(2), metadata={op_name="args[2]"}
-  ROOT %concatenate.1 = bf16[4,864]{1,0} concatenate(%args_0_.1, %args_1_.1, %args_2_.1), dimensions={1}, metadata={op_name="jit(concatenate)/concatenate" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/layers/vllm/linear_common.py" source_line=71 source_end_line=71 source_column=23 source_end_column=67}
-}
-

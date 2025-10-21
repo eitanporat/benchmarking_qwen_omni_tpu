@@ -1,7 +1,0 @@
-HloModule jit__allocate, is_scheduled=true, entry_computation_layout={()->bf16[14813,32,1,2,128]{4,3,2,1,0:T(2,128)(2,1)}}, num_partitions=4
-
-ENTRY %main.5_spmd () -> bf16[14813,32,1,2,128] {
-  %constant.2 = bf16[]{:T(256)} constant(0)
-  ROOT %broadcast_in_dim.1 = bf16[14813,32,1,2,128]{4,3,2,1,0:T(2,128)(2,1)} broadcast(%constant.2), dimensions={}, metadata={op_name="jit(_allocate)/broadcast_in_dim" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/runner/kv_cache.py" source_line=72 source_end_line=72 source_column=15 source_end_column=15}, backend_config={"flag_configs":[],"scoped_memory_configs":[],"used_scoped_memory_configs":[],"output_chunk_bound_config":{"output_chunk_bound":[]}}
-}
-

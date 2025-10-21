@@ -1,0 +1,8 @@
+HloModule jit_broadcast_in_dim, is_scheduled=true, entry_computation_layout={(s32[]{:T(128)})->s32[64]{0:T(128)}}, allow_spmd_sharding_propagation_to_parameters={true}, allow_spmd_sharding_propagation_to_output={true}
+
+ENTRY %main.3 (args_0_.1: s32[]) -> s32[64] {
+  %args_0_.1 = s32[]{:T(128)} parameter(0), metadata={op_name="args[0]"}
+  %copy = s32[]{:T(128)S(6)} copy(%args_0_.1)
+  ROOT %broadcast_in_dim.2 = s32[64]{0:T(128)} broadcast(%copy), dimensions={}, metadata={op_name="jit(broadcast_in_dim)/broadcast_in_dim" source_file="/home/eporat/benchmarking_qwen_omni_tpu/.venv/lib/python3.11/site-packages/tpu_inference/runner/compilation_manager.py" source_line=43 source_end_line=43 source_column=17 source_end_column=45}, backend_config={"flag_configs":[],"window_config":{"kernel_window_bounds":[],"output_window_bounds":["1"],"input_window_bounds":[],"estimated_cycles":"2120","iteration_bounds":["1"],"cost_model_type":"COST_MODEL_TYPE_INVALID","ml_estimated_microseconds":0,"is_mask":false},"scoped_memory_configs":[],"used_scoped_memory_configs":[{"memory_space":"1","offset":"0","size":"1024"}],"retry_config":{"retry_count":"0"},"output_chunk_bound_config":{"output_chunk_bound":[]}}
+}
+
