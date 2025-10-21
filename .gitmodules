@@ -1,0 +1,3 @@
+[submodule "tpu-inference"]
+	path = tpu-inference
+	url = https://github.com/eitanporat/tpu-inference.git
